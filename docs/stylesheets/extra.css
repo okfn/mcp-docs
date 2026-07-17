@@ -1,0 +1,44 @@
+/* Custom "tagline" admonition: a large, highlighted key statement.
+   Uses a violet accent so it stands apart from the teal theme.
+   Add one with:
+
+     !!! tagline "Title"
+         Your big statement here.
+*/
+
+:root {
+  --tagline-accent: #7c4dff;
+  --md-admonition-icon--tagline: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10,7L8,11H11V17H5V11L7,7H10M18,7L16,11H19V17H13V11L15,7H18Z"/></svg>');
+}
+
+[data-md-color-scheme="slate"] {
+  --tagline-accent: #b39dff;
+}
+
+.md-typeset .admonition.tagline,
+.md-typeset details.tagline {
+  border: none;
+  border-left: 0.3rem solid var(--tagline-accent);
+  background-color: color-mix(in srgb, var(--tagline-accent) 12%, transparent);
+  border-radius: 0.2rem;
+}
+
+.md-typeset .tagline > .admonition-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tagline-accent);
+  background-color: color-mix(in srgb, var(--tagline-accent) 18%, transparent);
+}
+
+.md-typeset .tagline > .admonition-title::before {
+  background-color: var(--tagline-accent);
+  -webkit-mask-image: var(--md-admonition-icon--tagline);
+          mask-image: var(--md-admonition-icon--tagline);
+}
+
+.md-typeset .tagline > p {
+  font-size: 1.45rem;
+  line-height: 1.5;
+  font-weight: 700;
+}

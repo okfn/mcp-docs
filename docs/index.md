@@ -42,9 +42,10 @@ has more about the session, including a PDF of the presentation slides.
 
 ## Why
 
-> **Large language models are great at conversation and terrible at
-> facts. Open data portals are great at facts and terrible at
-> conversation.**
+!!! tagline "The core idea"
+    Large language models are great at conversation and terrible at
+    facts. Open data portals are great at facts and terrible at
+    conversation.
 
 This platform connects the two, and it aims for a clear goal: the AI
 should answer from real datasets rather than its own memory, calling
