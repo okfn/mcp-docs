@@ -1,0 +1,10 @@
+[project]
+name = "mcp-docs"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mkdocs-material>=9.7.7",
+]
