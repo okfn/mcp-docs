@@ -48,8 +48,10 @@ The deeper reasoning for why a bare LLM is not enough is on
   against: answers should be correct (computed from the data) and every
   answer should point to its source. A tool that cannot cite a source
   does not get registered. See [the open model](open-model.md).
-- **Declarative where possible.** Most datasets can be described in a
-  small YAML file: no programming needed to add a new dataset.
+- **Plain code over a bespoke language.** Tools are mostly small Python
+  functions. Really simple datasets can instead be declared in YAML with
+  no code, but we keep that for the simple cases: see [the YAML
+  trade-off](../lessons/yaml-tradeoff.md).
 - **Free software, boring technology.** Python, CSV, SQLite, plain
   HTML and JS. Everything can run on a laptop.
 - **Local ownership.** Each community or domain team maintains its own

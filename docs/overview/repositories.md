@@ -8,7 +8,7 @@ own release pace.
 
 | Repo | What it is |
 |------|------------|
-| [mcp-server](https://github.com/okfn/mcp-server) | The MCP server. Loads tools from YAML files, Python modules and installed plugins, and serves them over stdio or HTTP. |
+| [mcp-server](https://github.com/okfn/mcp-server) | The MCP server. Loads tools from Python modules, installed plugins and YAML files, and serves them over stdio or HTTP. |
 | [mcp-chat-gateway](https://github.com/okfn/mcp-chat-gateway) | The web chat. Plain Flask + HTML/JS, no frontend framework. Connects an LLM to the MCP server and renders tables, charts and sources. |
 
 ## Data plugins

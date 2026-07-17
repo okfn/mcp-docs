@@ -9,11 +9,15 @@ narrowly](../lessons/scope.md) for the reasoning.
 
 A plugin can describe its tools in two ways, and mix both freely:
 
-- [**YAML datasets**](yaml-datasets.md): one small `.yaml` file per
-  dataset, no programming required. This covers most CSV-based
-  datasets and is the recommended starting point.
-- [**Python tools**](python-tools.md): plain Python functions, for
-  datasets that need custom logic (databases, APIs, computations).
+- [**Python tools**](python-tools.md): plain Python functions. This is
+  the main path, and what we reach for in practice: it handles anything
+  from a simple lookup to databases, APIs and computations, and stays
+  clear as a dataset grows.
+- [**YAML datasets**](yaml-datasets.md): declare a query in a small
+  `.yaml` file, no programming required. Handy for building simple
+  queries quickly, but only really suited to very simple datasets, and
+  worth understanding its limits first. See [the YAML
+  trade-off](../lessons/yaml-tradeoff.md).
 
 Whatever the style, every tool must follow the same
 [result contract](tool-results.md): a text answer for the AI plus
@@ -22,9 +26,10 @@ structured data (sources, tables, charts) for the UI.
 ## The path to your own plugin
 
 1. Start from the existing catalogs as templates:
-   [Uruguay](../catalogs/uruguay.md) (YAML + Python) or
-   [Brasil](../catalogs/brasil.md) (YAML).
-2. Describe your first dataset in a YAML file.
+   [Uruguay's energy plugin](../catalogs/uruguay.md) (Python) or
+   [Brasil](../catalogs/brasil.md) (YAML, simple datasets).
+2. Write your first tool as a [Python function](python-tools.md), or a
+   YAML dataset if it really is a simple one.
 3. Test it locally with [MCP Inspector](../getting-started/inspector.md).
 4. [Give your plugin a description and sample questions](plugin-info.md)
    so the chat shows a nice landing card.

@@ -34,6 +34,8 @@ best of intentions, so verification matters.
 
 - [Scope plugins narrowly](scope.md): why we split the broad Uruguay
   repo into a focused, domain-specific one.
+- [The YAML trade-off](yaml-tradeoff.md): why declaring datasets in YAML
+  is a good idea only for really simple cases.
 - [Reliability of calculations](calculations.md): where wrong numbers
   can slip in, and how to prevent it.
 - [Transparency and trust](transparency.md): the model mixing its own

@@ -90,6 +90,7 @@ nav:
   - Lessons from the pilot:
       - lessons/index.md
       - Scope plugins narrowly: lessons/scope.md
+      - The YAML trade-off: lessons/yaml-tradeoff.md
       - Reliability of calculations: lessons/calculations.md
       - Transparency and trust: lessons/transparency.md
       - Data quality and openness: lessons/data-quality.md

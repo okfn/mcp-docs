@@ -1,9 +1,17 @@
 # YAML datasets
 
-Most open datasets are a CSV file and a handful of obvious questions:
+Some datasets are just a CSV file and a handful of obvious questions:
 "what is the total per year?", "which are the top 10?", "list the rows
-for my city". For those, you do not write code: you describe the
-dataset in a YAML file and pick an **engine**.
+for my city". For those, you can skip writing code: describe the dataset
+in a YAML file and pick an **engine**.
+
+!!! warning "Only for really simple datasets"
+    YAML is an easy way to stand up simple queries fast, but it is only
+    suited to very simple datasets. The moment a dataset needs anything
+    custom, YAML stops being enough and you are better off with a
+    [Python tool](python-tools.md). In our own work we ended up using
+    little YAML for exactly this reason, see [the YAML
+    trade-off](../lessons/yaml-tradeoff.md) before you lean on it.
 
 ## The engines
 
