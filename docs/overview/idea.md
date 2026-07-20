@@ -57,6 +57,14 @@ The deeper reasoning for why a bare LLM is not enough is on
 - **Local ownership.** Each community or domain team maintains its own
   plugin repo, in its own language, at its own pace.
 
+!!! note "These principles were tested in the field"
+    Our pilots put all of this to the test with real users. One finding
+    stands out and is worth carrying
+    into every answer: the model sounds equally confident whether or not
+    it has the data to back it up, so the traceability above is not a
+    nicety, it is what lets users verify instead of trust the tone. See
+    [lessons from the pilots](../lessons/index.md).
+
 ## The standard underneath
 
 The AI-to-tools connection uses the
@@ -64,11 +72,3 @@ The AI-to-tools connection uses the
 open standard. That means our server works not only with our chat
 gateway but with any MCP-capable client (Claude Desktop, VS Code,
 MCP Inspector, and others).
-
-!!! note "These principles were tested in the field"
-    A July 2026 pilot over Uruguay's energy data put all of this to the
-    test with real users. One finding stands out and is worth carrying
-    into every answer: the model sounds equally confident whether or not
-    it has the data to back it up, so the traceability above is not a
-    nicety, it is what lets users verify instead of trust the tone. See
-    [lessons from the pilots](../lessons/index.md).
