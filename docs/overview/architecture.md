@@ -17,33 +17,52 @@ That is deliberate: it is what makes the numbers on screen come from
 human-written code instead of from the model.
 
 ```mermaid
-flowchart LR
-    user([User]) --> gateway
+sequenceDiagram
+    actor User
+    participant Gateway as Chat gateway
+    participant LLM
+    participant MCP as MCP server
+    participant Data as Datasets
 
-    subgraph chat [Chat gateway]
-        gateway[Flask web chat]
-    end
-
-    gateway -- "question + tool catalog" --> llm[Any OpenAI-compatible LLM]
-    llm -- "which tool to call, or final answer" --> gateway
-
-    gateway -- "list tools, call tool, read resources" --> server
-    server -- "reply: text + tables/charts/sources" --> gateway
-
-    subgraph mcp [MCP server]
-        server[FastMCP server]
-        server --> pytools[Python tools]
-        server --> engines[YAML engines]
-    end
-
-    pytools --> data[(CSV / SQLite datasets)]
-    engines --> data
-    plugins[Plugin repos: Uruguay, Brasil, ...] -. installed into .-> server
+    User->>Gateway: question
+    Gateway->>LLM: question + tool catalog
+    LLM-->>Gateway: call this tool, with these arguments
+    Gateway->>MCP: run that tool
+    MCP->>Data: read
+    Data-->>MCP: rows
+    MCP-->>Gateway: text + tables/charts/sources
+    Gateway->>LLM: the tool's text only
+    LLM-->>Gateway: the answer, in words
+    Gateway-->>User: those words, plus tables/charts drawn from the data
 ```
 
-Both links are request/response over HTTP, not bidirectional push. Each
-pair of arrows above is one call the gateway makes and the answer it gets
-back.
+That is the whole runtime picture, and time runs downward. The LLM
+answers the gateway **twice, at two different moments**, and the two
+replies are not the same kind of thing:
+
+- **The first reply names a tool.** The model has not seen any data yet.
+  It is looking at the tool catalog and picking one, so this reply is a
+  request, not an answer.
+- **The last reply is the answer.** By now the tool has run and the
+  gateway has handed the model the tool's text, so the model is writing
+  prose about data it has actually been given.
+
+The middle of the diagram can repeat: if the model wants a second tool,
+it asks again and the cycle runs once more before the final reply.
+
+The last two arrows are worth reading together. Only the tool's **text**
+goes back to the LLM; the tables and charts skip the model entirely and
+travel from the tool to the user's screen. That is the same point made
+above, drawn as a path.
+
+Two things the diagram deliberately leaves out, because they happen
+before any question is asked rather than during one. **Plugins** are
+installed into the MCP server at deploy time, which is how the Uruguay
+and Brasil tools get there; see [repositories](repositories.md). And
+inside the server a tool is either a **Python function** or, for really
+simple datasets, a [YAML declaration](../lessons/yaml-tradeoff.md)
+handled by an engine. Either way the server answers the same call in the
+same shape, so from the outside the difference does not exist.
 
 ## The flow of a question
 
