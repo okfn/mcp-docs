@@ -1,10 +1,16 @@
-# Lessons from the pilot
+# Lessons from the pilots
 
-In July 2026 we ran a public pilot of the platform over Uruguay's energy
-data, at [mcp-uruguay.okfn.org](https://mcp-uruguay.okfn.org/). The data
-came from Uruguay's *Balance Energetico Nacional* (BEN, the national
-energy balance), and real users, including domain experts, tested it and
-sent structured feedback.
+We tested the same architecture in **two government pilots**: with the
+Office of the Comptroller General in Brasil, over parliamentary
+amendments, and with AGESIC in Uruguay, over the national energy
+balance. Thirteen testers, from the partner governments and from civil
+society, asked their own questions and recorded structured feedback. See
+[two pilots, not one](two-pilots.md) for the setup.
+
+The Uruguay pilot ran publicly at
+[mcp-uruguay.okfn.org](https://mcp-uruguay.okfn.org/) over the *Balance
+Energetico Nacional* (BEN), and produced the most detailed feedback, so
+most of the concrete examples below come from there.
 
 This section consolidates what we learned. It is written for anyone
 building or running a similar deployment: the things that worked, the
@@ -32,6 +38,10 @@ best of intentions, so verification matters.
 
 ## What we learned, by topic
 
+- [Two pilots](two-pilots.md): who we tested with, how, and
+  what we set out to learn.
+- [Connecting the data is the easy part](meaning.md): access is not
+  understanding, and meaning is where the work is.
 - [Scope plugins narrowly](scope.md): why we split the broad Uruguay
   repo into a focused, domain-specific one.
 - [The YAML trade-off](yaml-tradeoff.md): why declaring datasets in YAML

@@ -50,11 +50,13 @@ has more about the session, including a PDF of the presentation slides.
 This platform connects the two, and it aims for a clear goal: the AI
 should answer from real datasets rather than its own memory, calling
 tools that read the data and carrying the sources with every response.
+Put simply: **we do not want the AI to know the answer, we want it to
+retrieve, explain and cite the data for the answer.**
 
 We have not fully reached that goal, but along the way we built
 something genuinely useful, a tool worth using with care. What we
 learned trying to get there is written up in
-[lessons from the pilot](lessons/index.md).
+[lessons from the pilots](lessons/index.md).
 
 ## What is in the box
 

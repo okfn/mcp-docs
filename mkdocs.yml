@@ -87,8 +87,10 @@ nav:
       - catalogs/index.md
       - Uruguay: catalogs/uruguay.md
       - Brasil: catalogs/brasil.md
-  - Lessons from the pilot:
+  - Lessons from the pilots:
       - lessons/index.md
+      - Two pilots: lessons/two-pilots.md
+      - Connecting the data is the easy part: lessons/meaning.md
       - Scope plugins narrowly: lessons/scope.md
       - The YAML trade-off: lessons/yaml-tradeoff.md
       - Reliability of calculations: lessons/calculations.md

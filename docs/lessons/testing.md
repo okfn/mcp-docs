@@ -14,6 +14,38 @@ that something feels off, but pinning down exactly which tool, which
 dataset and which assumption produced the wrong number takes patient
 work.
 
+## Human review is not a phase, it is a requirement
+
+The pilots did not surface a way around this. **People who understand
+the data are needed to spot plausible but unsupported claims**, and that
+need does not go away as the system improves. The failures that matter
+are not the obvious ones; they are the answers that look right to
+everyone except the person who knows the dataset.
+
+Plan for continuous human review, not a review milestone you pass once.
+
+## Real user questions beat invented ones
+
+The most useful testing came from questions people actually ask. Pilot
+partners handed us their frequently asked questions, and those became
+test cases directly.
+
+This worked better than test cases we wrote ourselves, in two ways: real
+questions exposed where **tool descriptions** were unclear or
+misleading, and they showed where the system needed **stronger limits**,
+places it was answering when it should have declined.
+
+If you run a pilot, ask your partner institution for their FAQ before
+you write a single test.
+
+## Who tests matters
+
+Mixing testers from inside the partner government with testers from
+civil society was useful precisely because they fail differently.
+Insiders catch wrong figures. Outsiders catch answers that are
+technically correct but incomprehensible, or that quietly assume
+knowledge they do not have. See [two pilots](two-pilots.md).
+
 Two things that helped:
 
 - Bringing **domain experts** into testing directly, rather than relying

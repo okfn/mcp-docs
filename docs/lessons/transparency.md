@@ -23,6 +23,24 @@ In general the AI is honest here. It differentiates its sources better
 when asked directly, and it often retracts when it realises it mixed a
 general fact into a data answer and got something wrong.
 
+## Traceability is necessary, but not sufficient
+
+A source link lets a user verify a number. It does not stop the system
+from wrapping that number in an interpretation the source never
+supported.
+
+In one Uruguay example, the system explained a change by referring to
+**"climate factors"**, even though the dataset contained no climate data
+at all. The number was right and the link was right. The explanation
+around it was invented, and it sounded entirely plausible.
+
+This is worth stating plainly, because it is easy to read
+[traceability](../overview/open-model.md) as a solved problem once the
+links are there. The link proves where the *data* came from. It says
+nothing about where the *reasoning* came from. The reader still has to
+notice when an answer claims a cause that no connected dataset could
+possibly know.
+
 ## Confidence does not track evidence
 
 A related and important point: the model's **tone of confidence does not

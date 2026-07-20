@@ -37,7 +37,7 @@ This is the intended flow, and it is what the design pushes toward. In
 practice the model can still slip its own knowledge into the prose, so
 the mix of a verifiable table next to the AI's words, plus the source
 links, is not a nice extra but the safeguard that makes the whole thing
-trustworthy. See [lessons from the pilot](../lessons/index.md).
+trustworthy. See [lessons from the pilots](../lessons/index.md).
 
 The deeper reasoning for why a bare LLM is not enough is on
 [the challenge](challenges.md) page.
@@ -71,4 +71,4 @@ MCP Inspector, and others).
     into every answer: the model sounds equally confident whether or not
     it has the data to back it up, so the traceability above is not a
     nicety, it is what lets users verify instead of trust the tone. See
-    [lessons from the pilot](../lessons/index.md).
+    [lessons from the pilots](../lessons/index.md).
