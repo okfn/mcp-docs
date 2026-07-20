@@ -46,8 +46,10 @@ The deeper reasoning for why a bare LLM is not enough is on
 
 - **Accuracy and traceability.** The two goals everything is measured
   against: answers should be correct (computed from the data) and every
-  answer should point to its source. A tool that cannot cite a source
-  does not get registered. See [the open model](open-model.md).
+  answer should point to its source. This is enforced in code, not just
+  intended: a tool that does not declare the source-carrying contract is
+  refused at startup and never becomes callable. See [how it is
+  enforced](../plugins/tool-results.md#how-it-is-enforced).
 - **Plain code over a bespoke language.** Tools are mostly small Python
   functions. Really simple datasets can instead be declared in YAML with
   no code, but we keep that for the simple cases: see [the YAML

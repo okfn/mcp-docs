@@ -55,7 +55,22 @@ def list_cities() -> DataToolOutput:
 ## How it is enforced
 
 The annotation `-> DataToolOutput` ties the return value to a schema
-(a Pydantic `ValidationModel`) that the MCP SDK validates as
+(a Pydantic `ValidationModel`) published as
 [structured output](https://github.com/modelcontextprotocol/python-sdk?tab=readme-ov-file#structured-output).
-Tools that skip the annotation are not registered. The schema is still
-evolving; when it changes, all plugins adapt together.
+At startup, `@registry.tool()` inspects each function's return
+annotation. If it is not `DataToolOutput`, the server logs a warning and
+**returns the function without registering it**. The tool does not
+appear in `tools/list`, so no client can call it and the LLM never
+learns it exists.
+
+!!! info "This is stricter than MCP requires"
+    The Model Context Protocol has no concept of a mandatory source. A
+    perfectly conformant MCP tool can return an answer from nowhere.
+    We deliberately narrow the standard: in this server, declaring where
+    the data came from is a condition of being registered at all.
+
+    This is the one place where traceability stops being a principle and
+    becomes a mechanism. It also means our tools are stricter than
+    generic MCP tools, not incompatible with them: any MCP client can
+    still call them, it just gets a richer, source-carrying payload
+    than the protocol guarantees.
