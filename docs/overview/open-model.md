@@ -8,12 +8,22 @@ which turn real pilots into open, replicable methods for responsible AI.
 
 ## The two goals
 
-Everything is measured against two goals the model must deliver where a
-bare LLM cannot:
+Everything is measured against two goals, chosen because they are
+exactly what a bare LLM cannot deliver:
 
-- **Accuracy**: correct answers, computed from the data.
-- **Traceability**: a link back to the source, so any answer can be
-  verified.
+- **Accuracy**: the answer is computed from the data, not recalled from
+  training. A model that has memorised a figure will still recite it
+  after the figure changes; a tool that reads the dataset will not.
+- **Traceability**: the answer carries a link back to the source, so a
+  reader can check it rather than trust it. This is what makes the
+  system auditable by people who do not trust it, which is the only
+  kind of trust worth having for public data.
+
+They are not independent. Traceability is what makes accuracy
+*checkable*, and without it an accurate system is indistinguishable from
+a confident one. The pilots showed the limit of this too: a source link
+proves where the data came from, not where the reasoning came from. See
+[traceability is necessary but not sufficient](../lessons/transparency.md).
 
 ## Three axes
 

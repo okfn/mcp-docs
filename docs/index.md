@@ -7,14 +7,13 @@ free software projects that let people ask questions in plain language
 (English, Spanish, Portuguese...) and get answers computed from official
 open data sources, with every answer linking back to the original data.
 
-It is built as part of the Open Knowledge Foundation's
-[AI Learning Labs](https://okfn.org/en/projects/ai-learning-labs/mcp-open-government-data/),
-which turn real-world pilots into open, replicable methods for
-responsible AI. Two goals sit at the centre of the design:
+Those two properties have names we use throughout this documentation:
+**accuracy** and **traceability**. They are the goals everything else is
+measured against, and [the open model](overview/open-model.md) explains
+what they demand in practice.
 
-- **Accuracy**: the answers should be correct, computed from the data.
-- **Traceability**: every answer should link back to its source, so it
-  can be verified.
+It is built as part of the Open Knowledge Foundation's
+[AI Learning Labs](https://okfn.org/en/projects/ai-learning-labs/mcp-open-government-data/).
 
 ## Watch the talk
 
