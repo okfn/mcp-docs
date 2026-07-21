@@ -14,10 +14,8 @@ A plugin can describe its tools in two ways, and mix both freely:
   from a simple lookup to databases, APIs and computations, and stays
   clear as a dataset grows.
 - [**YAML datasets**](yaml-datasets.md): declare a query in a small
-  `.yaml` file, no programming required. Handy for building simple
-  queries quickly, but only really suited to very simple datasets, and
-  worth understanding its limits first. See [the YAML
-  trade-off](../lessons/yaml-tradeoff.md).
+  `.yaml` file, no programming required. Only for really simple
+  datasets: see [the YAML trade-off](../lessons/yaml-tradeoff.md).
 
 Whatever the style, every tool must follow the same
 [result contract](tool-results.md): a text answer for the AI plus

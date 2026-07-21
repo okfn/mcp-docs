@@ -23,33 +23,28 @@ We put a layer between the AI and the user:
    sources, so anyone can verify it.
 
 !!! important "Tables and charts come from code, not from the AI"
-    This is a defining choice of the project. A tool returns two things:
-    a short text for the AI to read, and a structured payload (tables,
-    charts, sources) for the interface. Only the text ever reaches the
-    model. **The tables and charts are built by human-written tool
-    functions and rendered directly by the interface, bypassing the AI
-    completely.** So the numbers you see in a table are exactly what the
-    tool computed from the data, never something the model formatted,
-    rounded or invented. The AI writes the prose; the data speaks for
-    itself in the tables and charts beside it.
+    A tool returns two things: a short text for the AI to read, and a
+    structured payload (tables, charts, sources) for the interface.
+    Only the text ever reaches the model. **The tables and charts are
+    built by human-written tool functions and rendered directly by the
+    interface, bypassing the AI completely.** The AI writes the prose;
+    the data speaks for itself beside it.
 
-This is the intended flow, and it is what the design pushes toward. In
-practice the model can still slip its own knowledge into the prose, so
-the mix of a verifiable table next to the AI's words, plus the source
-links, is not a nice extra but the safeguard that makes the whole thing
-trustworthy. See [lessons from the pilots](../lessons/index.md).
+In practice the model can still slip its own knowledge into the prose,
+and it sounds equally confident with or without data behind it. The
+verifiable tables and source links next to its words are not a nice
+extra; they are the safeguard. See [lessons from the
+pilots](../lessons/index.md).
 
 The deeper reasoning for why a bare LLM is not enough is on
 [the challenge](challenges.md) page.
 
 ## Principles
 
-- **Accuracy and traceability.** The two goals everything is measured
-  against: answers should be correct (computed from the data) and every
-  answer should point to its source. This is enforced in code, not just
-  intended: a tool that does not declare the source-carrying contract is
-  refused at startup and never becomes callable. See [how it is
-  enforced](../plugins/tool-results.md#how-it-is-enforced).
+- **Accuracy and traceability.** Answers should be correct, computed
+  from the data, and every answer should point to its source. The
+  server [enforces this in
+  code](../plugins/tool-results.md#how-it-is-enforced).
 - **Plain code over a bespoke language.** Tools are mostly small Python
   functions. Really simple datasets can instead be declared in YAML with
   no code, but we keep that for the simple cases: see [the YAML
@@ -58,14 +53,6 @@ The deeper reasoning for why a bare LLM is not enough is on
   HTML and JS. Everything can run on a laptop.
 - **Local ownership.** Each community or domain team maintains its own
   plugin repo, in its own language, at its own pace.
-
-!!! note "These principles were tested in the field"
-    Our pilots put all of this to the test with real users. One finding
-    stands out and is worth carrying
-    into every answer: the model sounds equally confident whether or not
-    it has the data to back it up, so the traceability above is not a
-    nicety, it is what lets users verify instead of trust the tone. See
-    [lessons from the pilots](../lessons/index.md).
 
 ## The standard underneath
 

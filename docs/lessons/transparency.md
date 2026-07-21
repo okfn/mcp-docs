@@ -34,21 +34,13 @@ In one Uruguay example, the system explained a change by referring to
 at all. The number was right and the link was right. The explanation
 around it was invented, and it sounded entirely plausible.
 
-This is worth stating plainly, because it is easy to read
-[traceability](../overview/open-model.md) as a solved problem once the
-links are there. The link proves where the *data* came from. It says
-nothing about where the *reasoning* came from. The reader still has to
-notice when an answer claims a cause that no connected dataset could
-possibly know.
+The link proves where the *data* came from. It says nothing about where
+the *reasoning* came from. The reader still has to notice when an answer
+claims a cause that no connected dataset could possibly know.
 
 ## Confidence does not track evidence
 
-A related and important point: the model's **tone of confidence does not
-change with the quality of its evidence**. It answers with the same
-assurance whether or not it actually has the data. Users cannot use
-confidence as a signal of reliability, which is exactly why re-asking and
-verifying matter.
-
-This connects to the platform's core promise of
-[traceability](../overview/idea.md): every answer should point to the
-data it came from, so the user can check rather than trust the tone.
+The model's **tone of confidence does not change with the quality of
+its evidence**. It answers with the same assurance whether or not it
+actually has the data. Users cannot use confidence as a signal of
+reliability, which is exactly why re-asking and verifying matter.

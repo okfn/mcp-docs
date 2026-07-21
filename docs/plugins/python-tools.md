@@ -55,14 +55,10 @@ MCP_TRANSPORT=http uv run mcp-server
 
 ## Precompute derived values, do not ask the AI to
 
-A hard lesson from the Uruguay pilot: the model is unreliable at
-arithmetic like percentages and year-over-year changes, and it presents
-wrong numbers as confidently as right ones. The fix is to never ask it to
-do the maths. Compute the derived value with pandas so it becomes a real,
-documented column in your dataset, and let the tool simply read it.
-
-See [reliability of calculations](../lessons/calculations.md) for the
-full reasoning and the simple / complex / hard cases.
+The model is unreliable at arithmetic like percentages and
+year-over-year changes. Precompute them with pandas as real, documented
+columns and let the tool read them: see [reliability of
+calculations](../lessons/calculations.md).
 
 ## Less boilerplate
 

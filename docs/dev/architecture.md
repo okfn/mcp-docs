@@ -7,15 +7,6 @@ server and waits for each reply. The LLM and the MCP server never talk to
 each other, and the MCP server cannot interrupt: it only ever speaks when
 spoken to.
 
-That is about *timing*. It is not about *content*. When the gateway calls
-a tool, it asks only for that tool to run, but the tool decides what
-comes back, and anything it puts in `structuredContent` is rendered
-straight to the screen. A tool can return a table, a chart, or a `force`
-message, and the interface will display it without the AI or the gateway
-approving it first. **Tool code has direct write access to the chat.**
-That is deliberate: it is what makes the numbers on screen come from
-human-written code instead of from the model.
-
 ```mermaid
 sequenceDiagram
     actor User
@@ -53,10 +44,9 @@ replies are not the same kind of thing:
 The middle of the diagram can repeat: if the model wants a second tool,
 it asks again and the cycle runs once more before the final reply.
 
-The last two arrows are where to look for the point made above: the
-tool's **text** goes back to the LLM, while the tables and charts carry
-on past it to the user's screen. Two different destinations, drawn as
-two different paths.
+Note the last two arrows: the tool's **text** goes back to the LLM,
+while the tables and charts carry on past it to the user's screen,
+[never passing through the AI](../overview/idea.md).
 
 ## Where the plugin sits
 
@@ -87,9 +77,9 @@ tool is talking to the human over the model's head, by design.
 
 ## The contract
 
-One rule holds the whole picture together: every tool returns a text for
-the LLM **and** a `structuredContent` payload for the interface, and that
-payload must declare where the data came from.
+Every tool returns a text for the LLM **and** a `structuredContent`
+payload for the interface, and that payload must declare where the data
+came from.
 
 The sources are not a convention. A tool that does not declare the
 source-carrying contract is refused at startup and never becomes

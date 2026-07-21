@@ -1,7 +1,7 @@
 # Run the chat gateway
 
 The gateway is the human face of the platform: a web chat where the AI
-answers using only MCP tool data, never its own knowledge.
+is steered to answer from MCP tool data rather than its own memory.
 
 You need the [MCP server running](mcp-server.md) in HTTP mode first.
 

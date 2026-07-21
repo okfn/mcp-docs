@@ -1,20 +1,14 @@
 # Lessons from the pilots
 
-We tested the same architecture in **two government pilots**: with the
-Office of the Comptroller General in Brasil, over parliamentary
-amendments, and with AGESIC in Uruguay, over the national energy
-balance. Thirteen testers, from the partner governments and from civil
-society, asked their own questions and recorded structured feedback. See
-[two pilots, not one](two-pilots.md) for the setup.
+We tested the same architecture in **two government pilots**, in Brasil
+and in Uruguay: see [two pilots](two-pilots.md) for who, how, and what
+we set out to learn. The Uruguay pilot, which ran publicly at
+[mcp-uruguay.okfn.org](https://mcp-uruguay.okfn.org/), produced the most
+detailed feedback, so most concrete examples come from there.
 
-The Uruguay pilot ran publicly at
-[mcp-uruguay.okfn.org](https://mcp-uruguay.okfn.org/) over the *Balance
-Energetico Nacional* (BEN), and produced the most detailed feedback, so
-most of the concrete examples below come from there.
-
-This section consolidates what we learned. It is written for anyone
-building or running a similar deployment: the things that worked, the
-things that did not, and what we changed along the way.
+This section is written for anyone building or running a similar
+deployment: what worked, what did not, and what we changed along the
+way.
 
 !!! note "Read this as field notes, not a verdict"
     The feedback arrived while we were still deploying new versions, so

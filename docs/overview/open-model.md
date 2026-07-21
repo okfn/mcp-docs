@@ -19,11 +19,9 @@ exactly what a bare LLM cannot deliver:
   system auditable by people who do not trust it, which is the only
   kind of trust worth having for public data.
 
-They are not independent. Traceability is what makes accuracy
-*checkable*, and without it an accurate system is indistinguishable from
-a confident one. The pilots showed the limit of this too: a source link
-proves where the data came from, not where the reasoning came from. See
-[traceability is necessary but not sufficient](../lessons/transparency.md).
+The pilots also showed the limit: a source link proves where the data
+came from, not where the reasoning came from. See [traceability is
+necessary but not sufficient](../lessons/transparency.md).
 
 ## Three axes
 

@@ -12,7 +12,8 @@ building the software.
 It is also not always easy to give feedback manually. A tester notices
 that something feels off, but pinning down exactly which tool, which
 dataset and which assumption produced the wrong number takes patient
-work.
+work. Traceable answers help here: a tester can follow a number back to
+its source instead of guessing.
 
 ## Human review is not a phase, it is a requirement
 
@@ -45,14 +46,6 @@ civil society was useful precisely because they fail differently.
 Insiders catch wrong figures. Outsiders catch answers that are
 technically correct but incomprehensible, or that quietly assume
 knowledge they do not have. See [two pilots](two-pilots.md).
-
-Two things that helped:
-
-- Bringing **domain experts** into testing directly, rather than relying
-  on generalists. See [scope plugins narrowly](scope.md).
-- Making answers [traceable](../overview/open-model.md), so a tester can
-  follow a number back to its source instead of guessing whether it is
-  right.
 
 Budget real time and real expertise for testing. It is not a formality
 you can rush at the end.

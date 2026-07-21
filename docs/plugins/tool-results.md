@@ -8,17 +8,12 @@ different readers:
 - `structuredContent`: a JSON payload. This is what the **UI** (the
   chat gateway) reads to render source links, tables and charts.
 
-This split is the heart of the traceability promise: the AI gets
-words, the interface gets verifiable data.
-
 !!! important "Only `content` reaches the AI"
-    The gateway feeds `content` back to the model as the tool's reply,
-    but it renders `table` and `charts` from `structuredContent`
-    **directly to the screen, without passing them through the model**.
-    That means the tables and charts a user sees are exactly what your
-    tool function computed, human-written code over real data, not
-    something the AI reformatted or could distort. Put the numbers you
-    want trusted in `structuredContent`.
+    The gateway feeds `content` back to the model, but it renders
+    `table` and `charts` from `structuredContent` **directly to the
+    screen, without passing them through the model**. What users see is
+    exactly what your tool computed. Put the numbers you want trusted
+    in `structuredContent`.
 
 ## What goes in `structuredContent`
 
@@ -69,8 +64,6 @@ learns it exists.
     We deliberately narrow the standard: in this server, declaring where
     the data came from is a condition of being registered at all.
 
-    This is the one place where traceability stops being a principle and
-    becomes a mechanism. It also means our tools are stricter than
-    generic MCP tools, not incompatible with them: any MCP client can
-    still call them, it just gets a richer, source-carrying payload
-    than the protocol guarantees.
+    Our tools stay compatible: any MCP client can call them, it just
+    gets a richer, source-carrying payload than the protocol
+    guarantees.

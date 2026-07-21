@@ -6,12 +6,10 @@ for my city". For those, you can skip writing code: describe the dataset
 in a YAML file and pick an **engine**.
 
 !!! warning "Only for really simple datasets"
-    YAML is an easy way to stand up simple queries fast, but it is only
-    suited to very simple datasets. The moment a dataset needs anything
-    custom, YAML stops being enough and you are better off with a
-    [Python tool](python-tools.md). In our own work we ended up using
-    little YAML for exactly this reason, see [the YAML
-    trade-off](../lessons/yaml-tradeoff.md) before you lean on it.
+    The moment a dataset needs anything custom, YAML stops being enough
+    and you are better off with a [Python tool](python-tools.md). Read
+    [the YAML trade-off](../lessons/yaml-tradeoff.md) before you lean
+    on it.
 
 ## The engines
 

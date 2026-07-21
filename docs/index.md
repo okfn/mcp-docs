@@ -7,10 +7,8 @@ free software projects that let people ask questions in plain language
 (English, Spanish, Portuguese...) and get answers computed from official
 open data sources, with every answer linking back to the original data.
 
-Those two properties have names we use throughout this documentation:
-**accuracy** and **traceability**. They are the goals everything else is
-measured against, and [the open model](overview/open-model.md) explains
-what they demand in practice.
+We call these two goals **accuracy** and **traceability**; [the open
+model](overview/open-model.md) explains them.
 
 It is built as part of the Open Knowledge Foundation's
 [AI Learning Labs](https://okfn.org/en/projects/ai-learning-labs/mcp-open-government-data/).
@@ -46,11 +44,9 @@ has more about the session, including a PDF of the presentation slides.
     facts. Open data portals are great at facts and terrible at
     conversation.
 
-This platform connects the two, and it aims for a clear goal: the AI
-should answer from real datasets rather than its own memory, calling
-tools that read the data and carrying the sources with every response.
-Put simply: **we do not want the AI to know the answer, we want it to
-retrieve, explain and cite the data for the answer.**
+This platform connects the two. **We do not want the AI to know the
+answer, we want it to retrieve, explain and cite the data for the
+answer.**
 
 We have not fully reached that goal, but along the way we built
 something genuinely useful, a tool worth using with care. What we
@@ -62,9 +58,9 @@ learned trying to get there is written up in
 - An **MCP server** that turns open datasets (CSV files, databases) into
   tools an AI can call.
 - A **chat gateway**, a simple web chat that connects any OpenAI-compatible
-  LLM to the MCP server. It renders the tables, charts and source links
-  straight from the data, without routing them through the AI, so those
-  numbers are exactly what the tools computed.
+  LLM to the MCP server and renders tables, charts and source links
+  straight from the data, [without routing them through the
+  AI](overview/idea.md).
 - **Plugins** scoped to a focused data domain (Uruguay's energy balance,
   Brasil, and yours next) that describe datasets and the questions they
   can answer.

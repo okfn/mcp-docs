@@ -27,18 +27,12 @@ missing because the data is not there. That pushes them to open more
 data, which unlocks more answers, which invites more questions. The tool
 becomes an engine for opening quality data.
 
-## The action, and its horizon
+## Coverage is the roadmap
 
-The suggested action is to keep integrating and prioritising new datasets
-in the open data portal and connecting them to MCP. This is long-term
-work: it cannot be resolved inside a single pilot. Coverage of the tool
-grows exactly as fast as the open, documented data behind it grows.
-
-## Why coverage matters to users
-
-Because answers are computed only from connected datasets, questions that
-go past what is connected simply get no answer, for example deeper
-breakdowns by subsector or by destination country. That is the honest
+Answers are computed only from connected datasets, so questions that go
+past what is connected simply get no answer. That is the honest
 behaviour we want (better a clear "not in the data" than an invented
 number), but it means the roadmap of the tool is really the roadmap of
-the data.
+the data: coverage grows exactly as fast as the open, documented data
+behind it grows. Keep integrating and connecting new datasets; it is
+long-term work that no single pilot resolves.
