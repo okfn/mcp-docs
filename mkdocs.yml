@@ -78,46 +78,47 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Overview:
+  - The project:
       - overview/index.md
       - The idea: overview/idea.md
       - The challenge: overview/challenges.md
       - An open model for Latin America: overview/open-model.md
-      - Architecture: overview/architecture.md
-      - Repositories: overview/repositories.md
-  - Getting started:
-      - getting-started/index.md
-      - Run the MCP server: getting-started/mcp-server.md
-      - Run the chat gateway: getting-started/chat-gateway.md
-      - Test with MCP Inspector: getting-started/inspector.md
-  - Plugins:
-      - plugins/index.md
-      - YAML datasets: plugins/yaml-datasets.md
-      - Python tools: plugins/python-tools.md
-      - Tool results: plugins/tool-results.md
-      - Describe your plugin: plugins/plugin-info.md
-      - Connect to a server: plugins/connect.md
-  - Data catalogs:
-      - catalogs/index.md
-      - Uruguay: catalogs/uruguay.md
-      - Brasil: catalogs/brasil.md
-  - Lessons from the pilots:
-      - lessons/index.md
-      - Two pilots: lessons/two-pilots.md
-      - Connecting the data is the easy part: lessons/meaning.md
-      - Scope plugins narrowly: lessons/scope.md
-      - The YAML trade-off: lessons/yaml-tradeoff.md
-      - Reliability of calculations: lessons/calculations.md
-      - Transparency and trust: lessons/transparency.md
-      - Data quality and openness: lessons/data-quality.md
-      - New tools, old problems: lessons/data-access.md
-      - Testing is not simple: lessons/testing.md
-      - A domain glossary: lessons/glossary.md
-      - Open data resources: lessons/resources.md
-      - Tables and charts: lessons/presentation.md
-      - No accounts, no database: lessons/no-database.md
-      - Strengths and weaknesses: lessons/summary.md
-  - Operations:
-      - operations/index.md
-      - Deployment: operations/deployment.md
-  - Contributing: contributing.md
+      - Lessons from the pilots:
+          - lessons/index.md
+          - Two pilots: lessons/two-pilots.md
+          - Connecting the data is the easy part: lessons/meaning.md
+          - Scope plugins narrowly: lessons/scope.md
+          - The YAML trade-off: lessons/yaml-tradeoff.md
+          - Reliability of calculations: lessons/calculations.md
+          - Transparency and trust: lessons/transparency.md
+          - Data quality and openness: lessons/data-quality.md
+          - New tools, old problems: lessons/data-access.md
+          - Testing is not simple: lessons/testing.md
+          - A domain glossary: lessons/glossary.md
+          - Open data resources: lessons/resources.md
+          - Tables and charts: lessons/presentation.md
+          - No accounts, no database: lessons/no-database.md
+          - Strengths and weaknesses: lessons/summary.md
+  - Developer guide:
+      - Architecture: dev/architecture.md
+      - Repositories: dev/repositories.md
+      - Getting started:
+          - getting-started/index.md
+          - Run the MCP server: getting-started/mcp-server.md
+          - Run the chat gateway: getting-started/chat-gateway.md
+          - Test with MCP Inspector: getting-started/inspector.md
+      - Plugins:
+          - plugins/index.md
+          - YAML datasets: plugins/yaml-datasets.md
+          - Python tools: plugins/python-tools.md
+          - Tool results: plugins/tool-results.md
+          - Describe your plugin: plugins/plugin-info.md
+          - Connect to a server: plugins/connect.md
+      - Data catalogs:
+          - catalogs/index.md
+          - Uruguay: catalogs/uruguay.md
+          - Brasil: catalogs/brasil.md
+      - Operations:
+          - operations/index.md
+          - Deployment: operations/deployment.md
+      - Contributing: contributing.md
