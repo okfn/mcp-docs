@@ -1,7 +1,7 @@
 # Connecting the data is the easy part
 
-If there is one headline lesson from both pilots, it is this: **getting
-the model access to official data was not the hard part.**
+The headline lesson from both pilots: **getting the model access to
+official data was not the hard part.**
 
 The MCP layer does that job, and it does it reliably. Point the server
 at a dataset, describe the tools, and the model can read real numbers

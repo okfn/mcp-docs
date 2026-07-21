@@ -10,8 +10,8 @@ a lot. Three of the five were connected to MCP tools; the remaining two
 were left pending for the Uruguay team.
 
 These tools only work when the underlying data is good quality and well
-documented. It is worth saying plainly that the data used in this pilot
-was of excellent quality, and that is a large part of why it worked.
+documented. The data in this pilot was excellent, and that is a large
+part of why it worked.
 
 Quality has two halves, and both matter:
 

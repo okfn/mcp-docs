@@ -1,6 +1,7 @@
 # Architecture
 
-Three moving parts, one contract between them.
+Three moving parts run the platform, the chat gateway, the LLM and the
+MCP server with its plugin tools, and one contract ties them together.
 
 The **gateway is the only initiator**: it calls both the LLM and the MCP
 server and waits for each reply. The LLM and the MCP server never talk to
@@ -44,9 +45,9 @@ replies are not the same kind of thing:
 The middle of the diagram can repeat: if the model wants a second tool,
 it asks again and the cycle runs once more before the final reply.
 
-Note the last two arrows: the tool's **text** goes back to the LLM,
-while the tables and charts carry on past it to the user's screen,
-[never passing through the AI](../overview/idea.md).
+Notice where the structured data travels: the LLM is handed only the
+tool's text, while the tables and charts flow past it, straight to the
+user's screen, [never passing through the AI](../overview/idea.md).
 
 ## Where the plugin sits
 

@@ -19,9 +19,9 @@ exactly what a bare LLM cannot deliver:
   system auditable by people who do not trust it, which is the only
   kind of trust worth having for public data.
 
-The pilots also showed the limit: a source link proves where the data
-came from, not where the reasoning came from. See [traceability is
-necessary but not sufficient](../lessons/transparency.md).
+One caution from the pilots: a source link proves where the data came
+from, not where the reasoning came from. See [traceability is necessary
+but not sufficient](../lessons/transparency.md).
 
 ## Three axes
 
