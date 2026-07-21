@@ -30,9 +30,7 @@ We put a layer between the AI and the user:
     interface, bypassing the AI completely.** The AI writes the prose;
     the data speaks for itself beside it.
 
-In practice the model can still slip its own knowledge into the prose,
-and it sounds equally confident with or without data behind it. The
-verifiable tables and source links next to its words are not a nice
+The verifiable tables and source links next to its words are not a nice
 extra; they are the safeguard. See [lessons from the
 pilots](../lessons/index.md).
 
