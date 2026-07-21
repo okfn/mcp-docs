@@ -42,3 +42,21 @@
   line-height: 1.5;
   font-weight: 700;
 }
+
+/* Mermaid colours.
+
+   Material renders mermaid diagrams inside a CLOSED shadow root, so no
+   selector written here can reach the SVG: `.mermaid path { ... }` and
+   friends are silently ignored, `!important` included. The only things
+   that cross a shadow boundary are inherited CSS custom properties, so
+   the `--md-mermaid-*` variables below are the supported (and only)
+   way to restyle a diagram.
+
+   In dark mode the message lines and their arrowheads default to a dark
+   grey that vanishes against the background. Material paints both from
+   one variable, so they always share a colour. */
+
+[data-md-color-scheme="slate"] {
+  --md-mermaid-sequence-message-line-color: #ffab70;
+  --md-mermaid-sequence-actor-line-color: #6b6b7b;
+}

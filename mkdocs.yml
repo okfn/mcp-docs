@@ -44,6 +44,20 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+# Pin Mermaid to v10.
+#
+# Material loads Mermaid 11 from a CDN, but only if `window.mermaid` is not
+# already defined, so loading v10 here takes precedence. We do this because
+# Mermaid 11 renames the arrowhead marker to "<diagram-id>-arrowhead", which
+# no longer matches the "#arrowhead path" selector in Material's stylesheet.
+# Nothing then paints the arrowheads and they fall back to black, which is
+# invisible in dark mode. Mermaid 10 keeps the plain "arrowhead" id.
+#
+# Remove this line once Material's stylesheet matches Mermaid 11's markers,
+# and check that arrowheads are still visible in dark mode.
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
 markdown_extensions:
   - admonition
   - attr_list

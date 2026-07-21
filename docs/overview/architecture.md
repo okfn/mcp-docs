@@ -22,15 +22,18 @@ sequenceDiagram
     participant Gateway as Chat gateway
     participant LLM
     participant MCP as MCP server
+    participant Tool as Plugin tool
     participant Data as Datasets
 
     User->>Gateway: question
     Gateway->>LLM: question + tool catalog
     LLM-->>Gateway: call this tool, with these arguments
     Gateway->>MCP: run that tool
-    MCP->>Data: read
-    Data-->>MCP: rows
-    MCP-->>Gateway: text + tables/charts/sources
+    MCP->>Tool: dispatch to the plugin's function
+    Tool->>Data: read
+    Data-->>Tool: rows
+    Tool-->>MCP: text + tables/charts/sources
+    MCP-->>Gateway: that result, unchanged
     Gateway->>LLM: the tool's text only
     LLM-->>Gateway: the answer, in words
     Gateway-->>User: those words, plus tables/charts drawn from the data
@@ -55,14 +58,19 @@ goes back to the LLM; the tables and charts skip the model entirely and
 travel from the tool to the user's screen. That is the same point made
 above, drawn as a path.
 
-Two things the diagram deliberately leaves out, because they happen
-before any question is asked rather than during one. **Plugins** are
-installed into the MCP server at deploy time, which is how the Uruguay
-and Brasil tools get there; see [repositories](repositories.md). And
-inside the server a tool is either a **Python function** or, for really
-simple datasets, a [YAML declaration](../lessons/yaml-tradeoff.md)
-handled by an engine. Either way the server answers the same call in the
-same shape, so from the outside the difference does not exist.
+## Where the plugin sits
+
+The **plugin tool** is the only part of this picture that knows anything
+about a specific dataset. Everything above it is generic: the gateway,
+the LLM and the MCP server would work identically over parliamentary
+amendments or over an energy balance. Everything below it is a file.
+
+The MCP server does not read data. It receives a call, dispatches to the
+plugin function registered under that name, and passes the result back
+out **unchanged**. So the numbers a user sees were computed by code from
+a country's plugin repo, by people who know that data, which is exactly
+why plugins are [scoped to a domain someone
+understands](../lessons/scope.md).
 
 ## The flow of a question
 
