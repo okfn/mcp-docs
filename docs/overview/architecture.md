@@ -53,10 +53,10 @@ replies are not the same kind of thing:
 The middle of the diagram can repeat: if the model wants a second tool,
 it asks again and the cycle runs once more before the final reply.
 
-The last two arrows are worth reading together. Only the tool's **text**
-goes back to the LLM; the tables and charts skip the model entirely and
-travel from the tool to the user's screen. That is the same point made
-above, drawn as a path.
+The last two arrows are where to look for the point made above: the
+tool's **text** goes back to the LLM, while the tables and charts carry
+on past it to the user's screen. Two different destinations, drawn as
+two different paths.
 
 ## Where the plugin sits
 
@@ -72,40 +72,30 @@ a country's plugin repo, by people who know that data, which is exactly
 why plugins are [scoped to a domain someone
 understands](../lessons/scope.md).
 
-## The flow of a question
+## What the diagram leaves out
 
-1. The user types a question in the **chat gateway**.
-2. The gateway asks the **MCP server** for its tool catalog (`tools/list`).
-   This happens on the gateway's own initiative, before the AI is
-   involved.
-3. The gateway sends the conversation plus that tool catalog to the LLM.
-4. The LLM does not call anything itself. It replies with the **name** of
-   a tool and the parameters to use, or with a final text answer.
-5. If a tool was named, the gateway calls it on the MCP server
-   (`tools/call`). The server runs the tool against the real dataset and
-   **returns** two things in its reply: a text answer for the LLM, and a
-   structured payload (sources, tables, charts) for the UI.
-6. The gateway feeds the text back to the LLM (which may then answer or
-   call another tool), and renders the structured parts itself: source
-   links, tables, Chart.js charts.
+**The tool catalog arrives first.** Before any of this, the gateway asks
+the MCP server for its list of tools (`tools/list`) and caches it. That
+call is the gateway's own initiative and happens with no AI involved, so
+by the time the model is asked anything, the catalog it chooses from is
+already fixed. Running a tool is `tools/call`.
 
-So the MCP server never opens a connection to the chat on its own. But
-within the reply to a call the gateway made, the tool decides what the
-user sees, and the gateway renders it as-is. A tool can even return a
-`force` message: text shown directly to the user as its own message,
-which is never added to the conversation the LLM reads. In that case the
+**A tool can address the user directly.** Besides tables and charts, a
+tool can return a `force` message: text shown to the user as its own
+message, which is never added to the conversation the LLM reads. The
 tool is talking to the human over the model's head, by design.
 
 ## The contract
 
-Every tool returns both a human-readable text (for the LLM) and a
-`structuredContent` payload (for the UI) that must include the data
-sources. Crucially, only the text is sent to the model; the tables and
-charts in `structuredContent` are rendered straight to the interface,
-**never passing through the AI**. They are produced by human-written
-tool code, so they show exactly what was computed from the data. This
-contract is what keeps answers traceable, and it is described in detail
-in [tool results](../plugins/tool-results.md).
+One rule holds the whole picture together: every tool returns a text for
+the LLM **and** a `structuredContent` payload for the interface, and that
+payload must declare where the data came from.
+
+The sources are not a convention. A tool that does not declare the
+source-carrying contract is refused at startup and never becomes
+callable, which is stricter than the MCP standard requires. See [tool
+results](../plugins/tool-results.md) for the full shape and how it is
+enforced.
 
 ## Transports
 
