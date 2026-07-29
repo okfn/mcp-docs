@@ -18,7 +18,10 @@ way.
 
 ## The short version
 
-The overall experience was positive. The pattern users valued most was
+The overall experience was positive. When we asked partners
+what they would tell another government considering a similar approach,
+their answer began, literally, with "Do it!". The pattern users valued
+most was
 the combination of **human-authored tables and charts injected next to
 the AI's final answer**: the prose comes from the model, but the numbers
 and their sources come straight from the data. The more expert the user
@@ -38,6 +41,8 @@ best of intentions, so verification matters.
   understanding, and meaning is where the work is.
 - [Scope plugins narrowly](scope.md): why we split the broad Uruguay
   repo into a focused, domain-specific one.
+- [Domain experts from day one](partners.md): when the data owners need
+  to arrive, and how to pick the partner team.
 - [The YAML trade-off](yaml-tradeoff.md): why declaring datasets in YAML
   is a good idea only for really simple cases.
 - [Reliability of calculations](calculations.md): where wrong numbers
@@ -58,5 +63,7 @@ best of intentions, so verification matters.
   it.
 - [No accounts, no database](no-database.md): the cost and benefit of
   staying simple.
+- [What stayed after the pilot](ripple-effects.md): the capabilities
+  the pilot left behind in the partner government.
 - [Strengths and weaknesses](summary.md): the consolidated balance
   sheet.
