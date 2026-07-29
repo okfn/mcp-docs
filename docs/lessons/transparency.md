@@ -29,7 +29,7 @@ A source link lets a user verify a number. It does not stop the system
 from wrapping that number in an interpretation the source never
 supported.
 
-In one Uruguay example, the system explained a change by referring to
+In one example from the pilots, the system explained a change by referring to
 **"climate factors"**, even though the dataset contained no climate data
 at all. The number was right and the link was right. The explanation
 around it was invented, and it sounded entirely plausible.

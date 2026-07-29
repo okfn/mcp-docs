@@ -38,8 +38,8 @@ design. Governments face similar problems with similar data, so there is
 a lot of room for reuse. The ideal we aim at is a plug-and-play
 architecture: bring your standardized data, get a working assistant.
 
-The reuse claim already has a first field proof: after the Uruguay
-pilot, the partner's own technicians built an MCP server over another
+The reuse claim already has a first field proof: after one of the
+pilots, the partner's own technicians built an MCP server over another
 data source, unprompted. See [what stayed after the
 pilot](../lessons/ripple-effects.md).
 
@@ -50,7 +50,7 @@ The pilots feed a longer roadmap:
 - Finish the pilot testing phase and fold in the feedback received.
 - Document the learning (this site is that step) and translate it.
 - Make the documentation land for less experienced technical teams, and
-  keep shipping advanced working examples. The Uruguay partner named
+  keep shipping advanced working examples. Pilot partners named
   both: the examples as what helped, the extra clarity as what was
   missing.
 - Publish the material openly.

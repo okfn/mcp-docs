@@ -12,10 +12,10 @@ times: **re-ask and verify.** These tools must be used with care.
 - **Accurate on specific lookups.** When a question points at a value
   that exists in a dataset, behaviour is almost deterministic.
 - **Honest about the edges of the data.** It generally states plainly
-  when something is not in the BEN, instead of inventing it.
+  when something is not in the dataset, instead of inventing it.
 - **Recovers well from corrections.** When a user re-asks or flags an
   error, it recomputes, admits it, and fixes the answer.
-- **The glossary helps.** Official BEN definitions, both consultable and
+- **The glossary helps.** The dataset's official definitions, both consultable and
   [injected into the tools' context](glossary.md), improve answers and
   help non-experts.
 - **Human-authored tables and charts** next to the AI's answer are

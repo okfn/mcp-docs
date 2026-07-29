@@ -3,19 +3,19 @@
 A pilot produces a tool. This one also left capabilities behind, and in
 the long run those may matter more than the tool.
 
-For many people in the partner government this was their **first AI
+For many people in the partner governments this was their **first AI
 project** of any kind. Expectations were modest and exploratory, and by
-their own account they were widely exceeded: standing up a working
-version was faster and less complex than they had imagined.
+their own account they were exceeded: both teams were positively
+surprised by the speed of development and iteration.
 
 ## The technicians now build their own
 
-Most of the partner's technical staff knew MCP only by name, if at all.
-Working through the pilot, they learned it by doing: reading the repos,
-running the server, connecting the data.
+In one pilot, most of the partner's technical staff knew MCP only by
+name, if at all. Working through the pilot, they learned it by doing:
+reading the repos, running the server, connecting the data.
 
 Then came the part we did not plan. After understanding how the pieces
-fit, the partner's technical team **built their own MCP server over
+fit, that technical team **built their own MCP server over
 Google Analytics**, on their own initiative, and now uses it
 internally. More MCP servers have been opened inside the government
 since.
@@ -43,7 +43,7 @@ different teams, one objective, and a working result to show for it.
 
 ## What helped, and what to improve
 
-Two things the partner's technicians credited for the fast start: the
+Two things one partner's technicians credited for the fast start: the
 pilot ran **step by step**, showing progress and folding in feedback at
 each stage, and there were **advanced working examples** to learn from,
 not just reference docs. Their main suggestion: the documentation was

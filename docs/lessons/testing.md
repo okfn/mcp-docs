@@ -25,7 +25,7 @@ everyone except the person who knows the dataset.
 
 Plan for continuous human review, not a review milestone you pass once.
 That is only realistic if the domain experts are [on board from day
-one](partners.md); in the Uruguay pilot, validating and polishing the
+one](partners.md); in one pilot, validating and polishing the
 answers was the single most time-consuming part of the work.
 
 ## Real user questions beat invented ones

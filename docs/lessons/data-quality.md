@@ -7,7 +7,7 @@ As users pushed deeper, domain experts kept noticing that the portal was
 missing datasets needed to answer their questions. During the pilot, five
 datasets of energy consumption by sector were added, and answers improved
 a lot. Three of the five were connected to MCP tools; the remaining two
-were left pending for the Uruguay team.
+were left pending for the portal team.
 
 These tools only work when the underlying data is good quality and well
 documented. The data in this pilot was excellent, and that is a large

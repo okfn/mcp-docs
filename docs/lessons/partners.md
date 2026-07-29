@@ -1,8 +1,8 @@
 # Domain experts from day one
 
-Running the same architecture twice gave us a clean comparison. In
-Uruguay, the BEN domain experts were involved from the very beginning.
-In Brasil, the domain experts joined later, and everything took longer.
+Running the same architecture twice gave us a clean comparison. In one
+pilot, the data-owning team's experts were involved from the very
+beginning. In the other, they joined later, and everything took longer.
 Same architecture, same process, different starting lineup, and the
 difference was visible.
 
@@ -20,7 +20,7 @@ need the expert, not the programmer.
 ## Picking the partner team
 
 Choosing which institution and team hosts a pilot is a decision, not a
-default. What the Uruguay experience suggests:
+default. What the pilot experience suggests:
 
 - **Pick the best team, not the nearest one.** The quality of the
   plugin is capped by how well the team behind the data knows it.
@@ -40,7 +40,7 @@ Be honest with the partner up front: hosting a pilot is extra work for
 the data-owning team, on top of their normal duties. Validation and
 polishing, not plumbing, is where most of that time goes.
 
-It pays back. By the end of the pilot the BEN team was motivated by
+It pays back. By the end of the pilot the data-owning team was motivated by
 seeing their data used this way, and considered the result worth the
 effort: a new tool of their own to keep polishing and eventually
 publish, with clear warnings about its limitations.

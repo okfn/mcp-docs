@@ -39,7 +39,7 @@ only worked on the energy balance, it would be an energy tool.
 - The logs were then analysed for accuracy, recurring issue patterns and
   usability signals.
 - The pilot ran in **short stages**, showing progress and folding in
-  feedback at each step. The Uruguay partner later named this rhythm as
+  feedback at each step. A pilot partner later named this rhythm as
   one of the things that worked.
 
 ## What we set out to learn
