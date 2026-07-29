@@ -88,6 +88,7 @@ nav:
           - Two pilots: lessons/two-pilots.md
           - Connecting the data is the easy part: lessons/meaning.md
           - Scope plugins narrowly: lessons/scope.md
+          - Domain experts from day one: lessons/partners.md
           - The YAML trade-off: lessons/yaml-tradeoff.md
           - Reliability of calculations: lessons/calculations.md
           - Transparency and trust: lessons/transparency.md
@@ -98,6 +99,7 @@ nav:
           - Open data resources: lessons/resources.md
           - Tables and charts: lessons/presentation.md
           - No accounts, no database: lessons/no-database.md
+          - What stayed after the pilot: lessons/ripple-effects.md
           - Strengths and weaknesses: lessons/summary.md
   - Developer guide:
       - Architecture: dev/architecture.md
