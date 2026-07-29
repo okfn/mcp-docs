@@ -34,6 +34,27 @@ Only start when both the time and the institutional support are
 actually there. If they are not, wait or pick another partner; a pilot
 that stalls half-validated is worse than one that starts later.
 
+Support is not only needed to start. Continuing after the pilot means
+the work has to win a place on the organisation's own development
+backlog, and that takes building support among the other internal data
+teams, not just the one that hosted the pilot.
+
+## The internal technical team too
+
+Domain experts are not the only people to bring in early. One pilot's
+technicians worked hands-on from the start, reading the repos and
+running the server themselves, and after the pilot went on to
+[build their own MCP server](ripple-effects.md). The other team, in
+retrospect, would have involved their internal technical staff more
+actively: working alongside the project team and replicating parts of
+the process with the same tools and methodology.
+
+Both experiences point at the same lesson. Documentation supports
+future replication, but practical involvement is what transfers
+knowledge and builds internal ownership. A team that only reads about
+the pilot inherits a report; a team that works inside it inherits a
+capability.
+
 ## The workload is real, and worth it
 
 Be honest with the partner up front: hosting a pilot is extra work for
