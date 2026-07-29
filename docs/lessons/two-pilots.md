@@ -38,6 +38,9 @@ only worked on the energy balance, it would be an energy tool.
 - Testers asked their own questions and recorded feedback in logs.
 - The logs were then analysed for accuracy, recurring issue patterns and
   usability signals.
+- The pilot ran in **short stages**, showing progress and folding in
+  feedback at each step. The Uruguay partner later named this rhythm as
+  one of the things that worked.
 
 ## What we set out to learn
 
