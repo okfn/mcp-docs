@@ -8,6 +8,13 @@ institutions and two very different datasets. That was deliberate.
 | **Partner** | Office of the Comptroller General (CGU) | AGESIC |
 | **Dataset focus** | Parliamentary amendments, one of the most requested datasets on the national portal | National Energy Balance (BEN): energy imports, generation, installed capacity |
 | **Question** | Can citizens ask in natural language and get answers traceable to official data? | Does the same architecture hold in a different country, context and data environment? |
+| **Other data we explored** | Bolsa Família transfers per municipality, federal public procurement, health insurance operators | Public procurement in [Open Contracting](https://standard.open-contracting.org/) (OCDS) format, sexual crime statistics |
+
+The "other data" row is work we tested on but did not finish: the tools
+exist in the plugin repos, some disabled or in draft, and they were not
+part of the structured pilot testing below. They matter as evidence that
+the same architecture stretches to more datasets, notably public
+procurement data on both sides.
 
 ## Why two
 
