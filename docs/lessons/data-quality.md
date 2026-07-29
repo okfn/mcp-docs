@@ -28,6 +28,13 @@ Quality has two halves, and both matter:
   a number instead of just reciting it. This is also why a
   [domain glossary](glossary.md) pays off.
 
+The metadata half is also a wider challenge for open data providers.
+Dataset descriptions are often not as clear or complete as they need to
+be, especially in organisations that manage large numbers of datasets,
+where nobody can hand-polish every entry. Improving them is what makes
+datasets easier to discover and interpret, for AI systems and for
+people alike.
+
 There is a **positive feedback loop** hiding here. When domain experts
 talk to the tool, they quickly see that the answers they are missing are
 missing because the data is not there. That pushes them to open more
