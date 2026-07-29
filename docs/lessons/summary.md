@@ -24,6 +24,9 @@ times: **re-ask and verify.** These tools must be used with care.
   improving a Wikipedia article.
 - **It drives open data.** The pilot surfaces which datasets are missing
   and demands good documentation.
+- **It transfers capability.** Partner technicians learned the approach
+  well enough to build their own MCP server, unprompted. See
+  [what stayed after the pilot](ripple-effects.md).
 - **Simple to run.** No accounts, no database.
 
 ## Weaknesses
