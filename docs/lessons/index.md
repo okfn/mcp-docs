@@ -43,6 +43,8 @@ best of intentions, so verification matters.
   repo into a focused, domain-specific one.
 - [Domain experts from day one](partners.md): when the data owners need
   to arrive, and how to pick the partner team.
+- [Start with a simple dataset](start-simple.md): establish the
+  approach on easy data before climbing to complex data.
 - [The YAML trade-off](yaml-tradeoff.md): why declaring datasets in YAML
   is a good idea only for really simple cases.
 - [Reliability of calculations](calculations.md): where wrong numbers

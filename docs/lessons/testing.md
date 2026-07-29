@@ -51,4 +51,7 @@ technically correct but incomprehensible, or that quietly assume
 knowledge they do not have. See [two pilots](two-pilots.md).
 
 Budget real time and real expertise for testing. It is not a formality
-you can rush at the end.
+you can rush at the end. One pilot team said exactly this in
+retrospect: given the importance of testing and the
+[complexity of their dataset](start-simple.md), they would have
+allocated more time to it.

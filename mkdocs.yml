@@ -89,6 +89,7 @@ nav:
           - Connecting the data is the easy part: lessons/meaning.md
           - Scope plugins narrowly: lessons/scope.md
           - Domain experts from day one: lessons/partners.md
+          - Start with a simple dataset: lessons/start-simple.md
           - The YAML trade-off: lessons/yaml-tradeoff.md
           - Reliability of calculations: lessons/calculations.md
           - Transparency and trust: lessons/transparency.md
