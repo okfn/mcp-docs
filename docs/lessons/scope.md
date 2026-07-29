@@ -28,3 +28,6 @@ Narrow scope pays off in concrete ways:
   evolve at their own pace in their own repos.
 
 When in doubt, split by domain, not by portal or by country.
+
+This page is about *who* should be behind a plugin. Just as important
+is *when* they join: see [domain experts from day one](partners.md).
