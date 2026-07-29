@@ -7,7 +7,7 @@ built, why, and what we think about AI over public data.
   behind the design.
 - [The challenge](challenges.md): why LLMs on their own cannot be
   trusted with public data.
-- [An open model for Latin America](open-model.md): the two goals, the
+- [An open model for public data](open-model.md): the two goals, the
   three axes, and where this is going.
 - [Lessons from the pilots](../lessons/index.md): what two government
   pilots taught us, in the field, with real users.

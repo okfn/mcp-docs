@@ -1,4 +1,4 @@
-# An open model for Latin America
+# An open model for public data
 
 The platform is more than code: it is an open model for connecting AI to
 open government data, designed so that other governments and communities
