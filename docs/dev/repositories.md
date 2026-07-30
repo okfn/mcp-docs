@@ -28,7 +28,7 @@ own release pace.
 
 | Repo | What it is |
 |------|------------|
-| mcp-deployment | Docker Compose + Caddy setup used to run the public instance at mcp.okfn.org. |
+| mcp-deployment | Docker Compose + Caddy setup used to run the public instance at mcp.okfn.org. Private repo: it is our own infrastructure, so it is not publicly available. If you need help deploying your own instance, contact us. |
 | [mcp-docs](https://github.com/okfn/mcp-docs) | This documentation. |
 
 !!! tip "Which repo do I touch?"

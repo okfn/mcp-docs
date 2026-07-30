@@ -4,6 +4,11 @@ A instância pública em `mcp.okfn.org` roda a partir do repo
 `mcp-deployment`: uma pequena stack de Docker Compose enviada a um VPS
 com rsync. Sem Kubernetes, sem lock-in de nuvem.
 
+!!! note "Repo privado"
+    `mcp-deployment` é a nossa própria infraestrutura, então o repo não
+    está disponível publicamente. Se você precisar de ajuda para
+    implantar sua própria instância, entre em contato conosco.
+
 ## A stack
 
 ```mermaid

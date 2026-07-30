@@ -4,6 +4,11 @@ The public instance at `mcp.okfn.org` runs from the `mcp-deployment`
 repo: a small Docker Compose stack pushed to a VPS with rsync. No
 Kubernetes, no cloud lock-in.
 
+!!! note "Private repo"
+    `mcp-deployment` is our own infrastructure, so the repo is not
+    publicly available. If you need help deploying your own instance,
+    contact us.
+
 ## The stack
 
 ```mermaid

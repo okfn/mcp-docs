@@ -28,7 +28,7 @@ propios tests, su propio README y su propio ritmo de releases.
 
 | Repo | Qué es |
 |------|------------|
-| mcp-deployment | Configuración de Docker Compose + Caddy usada para correr la instancia pública en mcp.okfn.org. |
+| mcp-deployment | Configuración de Docker Compose + Caddy usada para correr la instancia pública en mcp.okfn.org. Repo privado: es nuestra propia infraestructura, así que no está disponible públicamente. Si necesitas ayuda para desplegar tu propia instancia, contáctanos. |
 | [mcp-docs](https://github.com/okfn/mcp-docs) | Esta documentación. |
 
 !!! tip "¿Qué repo toco?"
