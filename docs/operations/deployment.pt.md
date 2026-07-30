@@ -24,17 +24,8 @@ flowchart LR
 - **server**: o servidor MCP, instala os repos de plugins listados em
   `server/tool_sources.yaml` no momento do build.
 
-## Comandos do dia a dia
-
-```bash
-make help          # list all targets
-make deploy        # rsync code to the VPS + docker compose up --build
-make logs          # last 100 lines (SERVICE=server to filter)
-make logs-follow   # tail in real time
-```
-
 !!! note "Rascunho"
     Esta página é um resumo. Um runbook mais completo (configuração
     inicial do VPS, segredos, atualização de plugins em produção) está
-    planejado; por enquanto a referência é o próprio repo
-    `mcp-deployment`.
+    planejado; enquanto isso, entre em contato conosco se você precisar
+    desses detalhes.
