@@ -55,10 +55,30 @@ MCP_TRANSPORT=http uv run mcp-server
 
 ## Precompute derived values, do not ask the AI to
 
-The model is unreliable at arithmetic like percentages and
-year-over-year changes. Precompute them with pandas as real, documented
-columns and let the tool read them: see [reliability of
-calculations](../lessons/calculations.md).
+Direct lookups ("what was value X in year Y?") are reliable. Derived
+calculations are not: percentages, shares and year-over-year changes
+were the one area where pilot testers reported answers that were
+numerically wrong but presented as data. The model has no guarantee of
+getting the arithmetic right, and a wrong percentage in a tidy table
+looks entirely convincing.
+
+The reliable fix is to not ask the model to do the maths. Precompute
+the derived value with pandas so it becomes a real, documented column,
+and let the tool just read it:
+
+- **Simple cases** (a direct percentage of one dataset): add the
+  percentage as a new column with pandas, and document what it means.
+- **Complex cases** (a percentage that crosses several columns or
+  datasets): precompute the percentage people actually tend to ask
+  for, for example "what share was renewable in year X?".
+- **Hard, very specific cases** ("how much did X grow between year Y1
+  and year Y2?"): too specific to precompute for every pair. A tool
+  that acts as a small calculator might help here; we have not tested
+  this yet.
+
+Treat any on-the-fly percentage or change as suspect until a tool
+computes it from a documented column. If a number matters, it should
+come from the data, not from the model's head.
 
 ## Less boilerplate
 

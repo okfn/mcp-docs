@@ -128,13 +128,14 @@ nav:
           - Run the MCP server: getting-started/mcp-server.md
           - Run the chat gateway: getting-started/chat-gateway.md
           - Test with MCP Inspector: getting-started/inspector.md
-      - Plugins:
+      - Building plugins & datasets:
           - plugins/index.md
+          - Describe your plugin: plugins/plugin-info.md
           - YAML datasets: plugins/yaml-datasets.md
           - Python tools: plugins/python-tools.md
           - Tool results: plugins/tool-results.md
-          - Describe your plugin: plugins/plugin-info.md
           - Connect to a server: plugins/connect.md
+          - Domain glossaries: plugins/glossaries.md
       - Data catalogs:
           - catalogs/index.md
           - Uruguay: catalogs/uruguay.md

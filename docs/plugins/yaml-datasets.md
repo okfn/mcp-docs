@@ -8,8 +8,8 @@ in a YAML file and pick an **engine**.
 !!! warning "Only for really simple datasets"
     The moment a dataset needs anything custom, YAML stops being enough
     and you are better off with a [Python tool](python-tools.md). Read
-    [the YAML trade-off](../lessons/yaml-tradeoff.md) before you lean
-    on it.
+    [when to use YAML vs. Python](#when-to-use-yaml-vs-python) before
+    you lean on it.
 
 ## The engines
 
@@ -61,3 +61,25 @@ review and never conflict with each other.
 The engines themselves live in the
 [mcp-server repo](https://github.com/okfn/mcp-server/tree/main/src/mcp_server/engines),
 which is the reference if you need the full list of options.
+
+## When to use YAML vs. Python
+
+Declaring datasets in YAML works well for basic cases, but declarative
+YAML can easily turn into a bespoke query language if stretched too
+far. Every new filter type, join or calculated column requires
+expanding the YAML parser engine, and then has to be learned by whoever
+writes the YAML. The apparent simplicity moves rather than disappears.
+
+Rule of thumb:
+
+- **Use YAML** for genuinely simple CSV files with standard aggregation
+  or top-N questions.
+- **Use Python** as soon as a dataset requires custom calculations,
+  date transformations, multi-table joins or complex filtering logic.
+  Writing a few lines of standard [Python code](python-tools.md) is
+  clearer and easier to maintain than extending custom YAML rules.
+
+None of this makes YAML wrong. It makes it a sharp tool for a narrow
+job: use it for the simple cases, and do not try to grow it into a
+general query language, because that is a language you would then have
+to maintain.

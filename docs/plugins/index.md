@@ -1,11 +1,11 @@
-# Plugins
+# Building plugins and datasets
 
 A plugin is a git repo that teaches the MCP server about a set of
 datasets. We scope each plugin to a **focused data domain** (for
 example Uruguay's energy balance) rather than to a whole open data
 portal, which tends to grow too general. The Uruguay energy and Brasil
 catalogs are plugins; yours can be too. See [why we scope plugins
-narrowly](../lessons/scope.md) for the reasoning.
+narrowly](../dev/design-pattern.md) for the reasoning.
 
 A plugin can describe its tools in two ways, and mix both freely:
 
@@ -15,7 +15,8 @@ A plugin can describe its tools in two ways, and mix both freely:
   clear as a dataset grows.
 - [**YAML datasets**](yaml-datasets.md): declare a query in a small
   `.yaml` file, no programming required. Only for really simple
-  datasets: see [the YAML trade-off](../lessons/yaml-tradeoff.md).
+  datasets: see [when to use YAML vs.
+  Python](yaml-datasets.md#when-to-use-yaml-vs-python).
 
 Whatever the style, every tool must follow the same
 [result contract](tool-results.md): a text answer for the AI plus
@@ -33,10 +34,9 @@ structured data (sources, tables, charts) for the UI.
    so the chat shows a nice landing card.
 5. [Connect it to a server](connect.md).
 
-!!! tip "Learn from a real deployment"
-    Before you go deep, skim the [lessons from the Uruguay
-    pilot](../lessons/index.md). Two are especially practical when
-    building a plugin: [precompute derived values instead of asking the
-    AI](../lessons/calculations.md), and [give the AI a domain
-    glossary](../lessons/glossary.md) by injecting official definitions
-    into your tools' context.
+!!! tip "Two lessons from the pilots"
+    Two practices proved especially valuable when building a plugin:
+    [precompute derived values instead of asking the
+    AI](python-tools.md#precompute-derived-values-do-not-ask-the-ai-to),
+    and [give the AI a domain glossary](glossaries.md) by injecting
+    official definitions into your tools' context.
