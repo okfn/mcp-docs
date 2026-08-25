@@ -22,7 +22,7 @@ own release pace.
     The original `mcp-datos-uruguay` repo tried to cover the whole
     Uruguay portal and grew too general. It is no longer in use; the
     focused `mcp-datos-uruguay-ben` replaced it. See [why we scope
-    plugins narrowly](../lessons/scope.md).
+    plugins narrowly](design-pattern.md).
 
 ## Optional pieces
 
