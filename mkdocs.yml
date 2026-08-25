@@ -118,7 +118,10 @@ nav:
       - What stayed after the pilot: lessons/ripple-effects.md
       - Strengths and weaknesses: lessons/summary.md
   - Developer guide:
-      - Architecture: dev/architecture.md
+      - Architecture & design principles:
+          - System architecture: dev/architecture.md
+          - Architectural constraints: dev/constraints.md
+          - Modular plugins: dev/design-pattern.md
       - Repositories: dev/repositories.md
       - Getting started:
           - getting-started/index.md

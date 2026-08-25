@@ -1,12 +1,42 @@
-# Architecture
+# System architecture
 
-Three moving parts run the platform, the chat gateway, the LLM and the
-MCP server with its plugin tools, and one contract ties them together.
+The platform consists of three core components coordinated by a
+central orchestrator:
 
-The **gateway is the only initiator**: it calls both the LLM and the MCP
-server and waits for each reply. The LLM and the MCP server never talk to
-each other, and the MCP server cannot interrupt: it only ever speaks when
-spoken to.
+- **Chat gateway**: the central initiator that handles user input and
+  orchestrates calls between the LLM and the MCP server.
+- **LLM**: generates natural language prose and decides which tools to
+  invoke based on user prompts.
+- **MCP server and plugins**: receives tool calls from the gateway and
+  dispatches them to domain-specific plugin code to read raw data.
+
+The LLM and the MCP server never talk to each other directly; the
+gateway acts as the sole intermediary and initiator. The MCP server
+cannot interrupt: it only ever speaks when spoken to.
+
+## Execution flow
+
+Before processing user questions, the gateway requests the tool catalog
+(`tools/list`) from the MCP server and caches it. This step requires no
+AI, so by the time the model is asked anything, the catalog it chooses
+from is already fixed. Running a tool is `tools/call`.
+
+When a user submits a question, the runtime cycle proceeds as follows:
+
+1. **Tool request.** The gateway sends the user prompt and the cached
+   tool catalog to the LLM. The LLM selects an appropriate tool and
+   returns the required arguments.
+2. **Data retrieval.** The gateway calls the tool via the MCP server
+   (`tools/call`). The plugin executes Python code or reads YAML data
+   to fetch raw records.
+3. **Data division.** The plugin splits its output into two parts:
+   plain text summaries sent back to the LLM via the gateway, and
+   structured data (tables, charts and source links) sent directly to
+   the gateway UI.
+4. **Final response.** The LLM receives the plain text data and
+   generates a natural language answer. The gateway combines this
+   prose with the structured tables and charts to render the final
+   response to the user.
 
 ```mermaid
 sequenceDiagram
@@ -31,13 +61,13 @@ sequenceDiagram
     Gateway-->>User: those words, plus tables/charts drawn from the data
 ```
 
-That is the whole runtime picture, and time runs downward. The LLM
-answers the gateway **twice, at two different moments**, and the two
-replies are not the same kind of thing:
+Time runs downward. The LLM answers the gateway **twice, at two
+different moments**, and the two replies are not the same kind of
+thing:
 
-- **The first reply names a tool.** The model has not seen any data yet.
-  It is looking at the tool catalog and picking one, so this reply is a
-  request, not an answer.
+- **The first reply names a tool.** The model has not seen any data
+  yet. It is looking at the tool catalog and picking one, so this reply
+  is a request, not an answer.
 - **The last reply is the answer.** By now the tool has run and the
   gateway has handed the model the tool's text, so the model is writing
   prose about data it has actually been given.
@@ -45,36 +75,39 @@ replies are not the same kind of thing:
 The middle of the diagram can repeat: if the model wants a second tool,
 it asks again and the cycle runs once more before the final reply.
 
-Notice where the structured data travels: the LLM is handed only the
-tool's text, while the tables and charts flow past it, straight to the
-user's screen, [never passing through the AI](../overview/idea.md).
+## Key technical rules
+
+- **Structured data bypasses the LLM.** Tables and charts flow directly
+  from the plugin to the user interface. They never pass through the
+  model context, which reduces token overhead and prevents the LLM from
+  misrendering UI elements.
+- **Generic core, domain-specific plugins.** The gateway, the LLM and
+  the MCP server are dataset-agnostic. All domain knowledge and data
+  retrieval logic live entirely inside the plugin.
+- **Strict source contract.** Tools must include a `structuredContent`
+  payload declaring the exact data source. The MCP server enforces this
+  contract at startup and rejects any tool that fails to declare its
+  source. See [the contract](#the-contract) below.
+- **Direct messaging (`force` message).** A plugin can send a message
+  directly to the user's screen, over the model's head: text shown to
+  the user as its own message, never added to the conversation the LLM
+  reads. This lets tools display strict system limits or warnings
+  without LLM interference.
 
 ## Where the plugin sits
 
-The **plugin tool** is the only part of this picture that knows anything
-about a specific dataset. Everything above it is generic: the gateway,
-the LLM and the MCP server would work identically over parliamentary
-amendments or over an energy balance. Everything below it is a file.
+The **plugin tool** is the only part of this picture that knows
+anything about a specific dataset. Everything above it is generic: the
+gateway, the LLM and the MCP server would work identically over
+parliamentary amendments or over an energy balance. Everything below it
+is a file.
 
-The MCP server does not read data. It receives a call, dispatches to the
-plugin function registered under that name, and passes the result back
-out **unchanged**. So the numbers a user sees were computed by code from
-a country's plugin repo, by people who know that data, which is exactly
-why plugins are [scoped to a domain someone
-understands](../lessons/scope.md).
-
-## What the diagram leaves out
-
-**The tool catalog arrives first.** Before any of this, the gateway asks
-the MCP server for its list of tools (`tools/list`) and caches it. That
-call is the gateway's own initiative and happens with no AI involved, so
-by the time the model is asked anything, the catalog it chooses from is
-already fixed. Running a tool is `tools/call`.
-
-**A tool can address the user directly.** Besides tables and charts, a
-tool can return a `force` message: text shown to the user as its own
-message, which is never added to the conversation the LLM reads. The
-tool is talking to the human over the model's head, by design.
+The MCP server does not read data. It receives a call, dispatches to
+the plugin function registered under that name, and passes the result
+back out **unchanged**. So the numbers a user sees were computed by
+code from a country's plugin repo, by people who know that data, which
+is exactly why plugins are [scoped to a domain someone
+understands](design-pattern.md).
 
 ## The contract
 
@@ -92,6 +125,12 @@ enforced.
 
 The MCP server speaks two transports:
 
-- **stdio**: for local use, e.g. plugging it into Claude Desktop.
-- **HTTP**: for real deployments, where the gateway (or any client)
-  connects over the network.
+- **stdio**: for local use and debugging, e.g. plugging it into Claude
+  Desktop.
+- **HTTP**: for production deployment, where the gateway (or any
+  client) connects over the network.
+
+Two deliberate design decisions round out the architecture: the
+[architectural constraints](constraints.md) (stateless gateway,
+structured presentation) and the [modular plugins design
+pattern](design-pattern.md).
