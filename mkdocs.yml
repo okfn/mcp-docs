@@ -136,11 +136,11 @@ nav:
           - Tool results: plugins/tool-results.md
           - Connect to a server: plugins/connect.md
           - Domain glossaries: plugins/glossaries.md
-      - Data catalogs:
-          - catalogs/index.md
-          - Uruguay: catalogs/uruguay.md
-          - Brasil: catalogs/brasil.md
       - Operations:
           - operations/index.md
           - Deployment: operations/deployment.md
       - Contributing: contributing.md
+  - Use cases:
+      - catalogs/index.md
+      - Uruguay implementation: catalogs/uruguay.md
+      - Brazil implementation: catalogs/brasil.md

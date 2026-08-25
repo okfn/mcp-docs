@@ -1,4 +1,4 @@
-# Brasil
+# Brazil implementation
 
 **Repo:** [okfn/mcp-dados-brasil](https://github.com/okfn/mcp-dados-brasil)
 &middot; **Portal:** [dados.gov.br](https://dados.gov.br)
@@ -13,8 +13,9 @@ repo also contains Python tools for more elaborate cases.
 This catalog backed a pilot with Brasil's Office of the Comptroller
 General, focused on **parliamentary amendments**, one of the most
 requested datasets on the portal. The goal was to test whether citizens
-could ask in natural language and get answers traceable back to official
-data. See [lessons from the pilots](../lessons/index.md).
+could ask in natural language and get answers traceable back to
+official data. The findings are written up in the *Field Guide to
+Connecting AI to Public Information*.
 
 ## Adding a dataset
 
