@@ -60,6 +60,8 @@ extra_javascript:
 
 plugins:
   - search
+  # Translations dropped during the docs restructure; es/pt will be
+  # re-added as a final pass once the English content settles.
   - i18n:
       docs_structure: suffix
       fallback_to_default: true
@@ -70,92 +72,6 @@ plugins:
           name: English
           build: true
           default: true
-        - locale: es
-          name: Español
-          build: true
-          nav_translations:
-            Home: Inicio
-            The project: El proyecto
-            The idea: La idea
-            The challenge: El desafío
-            An open model for public data: Un modelo abierto para datos públicos
-            Lessons from the pilots: Lecciones de los pilotos
-            Two pilots: Dos pilotos
-            Connecting the data is the easy part: Conectar los datos es la parte fácil
-            Scope plugins narrowly: Plugins de alcance acotado
-            Domain experts from day one: Expertos de dominio desde el primer día
-            Start with a simple dataset: Empezar con un dataset simple
-            The YAML trade-off: El compromiso del YAML
-            Reliability of calculations: Confiabilidad de los cálculos
-            Transparency and trust: Transparencia y confianza
-            Data quality and openness: Calidad y apertura de los datos
-            New tools, old problems: Herramientas nuevas, problemas viejos
-            Testing is not simple: Probar no es simple
-            A domain glossary: Un glosario de dominio
-            Open data resources: Recursos de datos abiertos
-            Tables and charts: Tablas y gráficos
-            No accounts, no database: Sin cuentas, sin base de datos
-            What stayed after the pilot: Lo que quedó después del piloto
-            Strengths and weaknesses: Fortalezas y debilidades
-            Developer guide: Guía para desarrolladores
-            Architecture: Arquitectura
-            Repositories: Repositorios
-            Getting started: Primeros pasos
-            Run the MCP server: Ejecutar el servidor MCP
-            Run the chat gateway: Ejecutar el chat gateway
-            Test with MCP Inspector: Probar con MCP Inspector
-            YAML datasets: Datasets en YAML
-            Python tools: Herramientas en Python
-            Tool results: Resultados de las herramientas
-            Describe your plugin: Describir tu plugin
-            Connect to a server: Conectar a un servidor
-            Data catalogs: Catálogos de datos
-            Operations: Operaciones
-            Deployment: Despliegue
-            Contributing: Contribuir
-        - locale: pt
-          name: Português
-          build: true
-          nav_translations:
-            Home: Início
-            The project: O projeto
-            The idea: A ideia
-            The challenge: O desafio
-            An open model for public data: Um modelo aberto para dados públicos
-            Lessons from the pilots: Lições dos pilotos
-            Two pilots: Dois pilotos
-            Connecting the data is the easy part: Conectar os dados é a parte fácil
-            Scope plugins narrowly: Plugins com escopo restrito
-            Domain experts from day one: Especialistas de domínio desde o primeiro dia
-            Start with a simple dataset: Comece com um dataset simples
-            The YAML trade-off: O trade-off do YAML
-            Reliability of calculations: Confiabilidade dos cálculos
-            Transparency and trust: Transparência e confiança
-            Data quality and openness: Qualidade e abertura dos dados
-            New tools, old problems: Ferramentas novas, problemas antigos
-            Testing is not simple: Testar não é simples
-            A domain glossary: Um glossário de domínio
-            Open data resources: Recursos de dados abertos
-            Tables and charts: Tabelas e gráficos
-            No accounts, no database: Sem contas, sem banco de dados
-            What stayed after the pilot: O que ficou depois do piloto
-            Strengths and weaknesses: Pontos fortes e fracos
-            Developer guide: Guia do desenvolvedor
-            Architecture: Arquitetura
-            Repositories: Repositórios
-            Getting started: Primeiros passos
-            Run the MCP server: Executar o servidor MCP
-            Run the chat gateway: Executar o chat gateway
-            Test with MCP Inspector: Testar com o MCP Inspector
-            YAML datasets: Datasets em YAML
-            Python tools: Ferramentas em Python
-            Tool results: Resultados das ferramentas
-            Describe your plugin: Descrever seu plugin
-            Connect to a server: Conectar a um servidor
-            Data catalogs: Catálogos de dados
-            Operations: Operações
-            Deployment: Implantação
-            Contributing: Contribuir
 
 markdown_extensions:
   - admonition
@@ -177,30 +93,30 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - The project:
-      - overview/index.md
-      - The idea: overview/idea.md
-      - The challenge: overview/challenges.md
-      - An open model for public data: overview/open-model.md
-      - Lessons from the pilots:
-          - lessons/index.md
-          - Two pilots: lessons/two-pilots.md
-          - Connecting the data is the easy part: lessons/meaning.md
-          - Scope plugins narrowly: lessons/scope.md
-          - Domain experts from day one: lessons/partners.md
-          - Start with a simple dataset: lessons/start-simple.md
-          - The YAML trade-off: lessons/yaml-tradeoff.md
-          - Reliability of calculations: lessons/calculations.md
-          - Transparency and trust: lessons/transparency.md
-          - Data quality and openness: lessons/data-quality.md
-          - New tools, old problems: lessons/data-access.md
-          - Testing is not simple: lessons/testing.md
-          - A domain glossary: lessons/glossary.md
-          - Open data resources: lessons/resources.md
-          - Tables and charts: lessons/presentation.md
-          - No accounts, no database: lessons/no-database.md
-          - What stayed after the pilot: lessons/ripple-effects.md
-          - Strengths and weaknesses: lessons/summary.md
+  - Introduction:
+      - Project context: introduction/context.md
+      - Why MCP?: introduction/why-mcp.md
+  # Temporary top-level section: moves to the Field Guide (step 7 of the
+  # restructure) once that document is published.
+  - Lessons from the pilots:
+      - lessons/index.md
+      - Two pilots: lessons/two-pilots.md
+      - Connecting the data is the easy part: lessons/meaning.md
+      - Scope plugins narrowly: lessons/scope.md
+      - Domain experts from day one: lessons/partners.md
+      - Start with a simple dataset: lessons/start-simple.md
+      - The YAML trade-off: lessons/yaml-tradeoff.md
+      - Reliability of calculations: lessons/calculations.md
+      - Transparency and trust: lessons/transparency.md
+      - Data quality and openness: lessons/data-quality.md
+      - New tools, old problems: lessons/data-access.md
+      - Testing is not simple: lessons/testing.md
+      - A domain glossary: lessons/glossary.md
+      - Open data resources: lessons/resources.md
+      - Tables and charts: lessons/presentation.md
+      - No accounts, no database: lessons/no-database.md
+      - What stayed after the pilot: lessons/ripple-effects.md
+      - Strengths and weaknesses: lessons/summary.md
   - Developer guide:
       - Architecture: dev/architecture.md
       - Repositories: dev/repositories.md

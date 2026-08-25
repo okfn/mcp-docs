@@ -1,19 +1,28 @@
-# OKFN MCP Platform
+# MCP Technical Documentation
 
-**Answer questions with open data, not with AI guesses.**
+Welcome to the MCP Technical Documentation: a practical guide to
+connecting open public data to AI models using the Model Context
+Protocol (MCP).
 
-This is the documentation for the OKFN MCP platform: a small family of
-free software projects that let people ask questions in plain language
-(English, Spanish, Portuguese...) and get answers computed from official
-open data sources, with every answer linking back to the original data.
+This manual provides the architecture specifications, code patterns and
+configuration templates needed to build plugins, run the server and
+deploy data tools.
 
-That sentence contains the project's two goals: answers computed from
-the data, which we call **accuracy**, and answers that link back to
-their source, which we call **traceability**. [The open
-model](overview/open-model.md) explains both.
+Everything here is measured against two goals: **accuracy** (answers
+computed from official data, not recalled from training) and
+**traceability** (every answer links back to its source). The
+[project context](introduction/context.md) explains both and why they
+matter for public data.
 
-It is built as part of the Open Knowledge Foundation's
-[AI Learning Labs](https://okfn.org/en/projects/ai-learning-labs/mcp-open-government-data/).
+**Looking for non-technical context or project strategy?** Check out
+the *Field Guide to Connecting AI to Public Information*. It covers
+lessons from our Brazil and Uruguay pilots, guidance on working with
+domain experts, and real-world user feedback. Until the Field Guide is
+published, see [lessons from the pilots](lessons/index.md).
+
+For more information, please visit the official project page
+"Traceable AI Answers for Public Data" at the
+[Open Knowledge Foundation (OKFN) website](https://okfn.org/en/projects/ai-learning-labs/mcp-open-government-data/).
 
 ## Watch the talk
 
@@ -39,22 +48,6 @@ extended version of that same view.
 The [CEPAL event page](https://rtc-cea.cepal.org/es/evento/videoconferencia-sobre-ia-trazable-para-datos-publicos-un-modelo-abierto-para-america-latina)
 has more about the session, including a PDF of the presentation slides.
 
-## Why
-
-!!! tagline "The core idea"
-    Large language models are great at conversation and terrible at
-    facts. Open data portals are great at facts and terrible at
-    conversation.
-
-This platform connects the two. **We do not want the AI to know the
-answer, we want it to retrieve, explain and cite the data for the
-answer.**
-
-We have not fully reached that goal, but along the way we built
-something genuinely useful, a tool worth using with care. What we
-learned trying to get there is written up in
-[lessons from the pilots](lessons/index.md).
-
 ## What is in the box
 
 - An **MCP server** that turns open datasets (CSV files, databases) into
@@ -62,14 +55,14 @@ learned trying to get there is written up in
 - A **chat gateway**, a simple web chat that connects any OpenAI-compatible
   LLM to the MCP server and renders tables, charts and source links
   straight from the data, [without routing them through the
-  AI](overview/idea.md).
+  AI](dev/architecture.md).
 - **Plugins** scoped to a focused data domain (Uruguay's energy balance,
   Brasil, and yours next) that describe datasets and the questions they
   can answer.
 
 ## Where to go next
 
-- New here? Start with [the idea](overview/idea.md).
+- New here? Start with the [project context](introduction/context.md).
 - Want to run it? Go to [getting started](getting-started/index.md).
 - Want to add your country's data? Read [plugins](plugins/index.md).
 
