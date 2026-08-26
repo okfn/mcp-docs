@@ -118,7 +118,6 @@ nav:
   - Use cases:
       - catalogs/index.md
       - Uruguay implementation: catalogs/uruguay.md
-      - Brazil implementation: catalogs/brasil.md
   - Operations:
       - operations/index.md
       - Deployment: operations/deployment.md
