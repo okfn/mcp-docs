@@ -31,6 +31,13 @@ Open `http://127.0.0.1:8064`, pick a suggested question or type your
 own, and watch the answer arrive with its tables, charts and source
 links.
 
+!!! tip "No datasets yet? Ask about the example tools"
+    A freshly cloned server already serves its [bundled example
+    tools](mcp-server.md#what-tools-does-it-serve), so you can test the
+    full loop before installing any real catalog: ask the chat what it
+    can answer, call an example tool through it, and check that the
+    answer comes back with its sources.
+
 !!! note "Disposable by design"
     The gateway is intentionally simple: plain HTML/JS/CSS, a minimal
     Flask backend, no frontend framework. It exists to test and
