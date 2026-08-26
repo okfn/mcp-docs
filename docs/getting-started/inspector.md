@@ -1,9 +1,13 @@
 # Test with MCP Inspector
 
+**This step is optional.** You can skip straight to [running the chat
+gateway](chat-gateway.md); the Inspector is just the fastest way to
+check that the server and its tools work, with no AI involved.
+
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is
 the official debugging UI for MCP servers. It lets you browse tools and
-call them by hand, with no AI model in the loop. It is the fastest way
-to check that a tool does what you think it does.
+call them by hand, with no AI model in the loop, and check that a tool
+does what you think it does.
 
 With the server running in HTTP mode (see
 [run the MCP server](mcp-server.md)):

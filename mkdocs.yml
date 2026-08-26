@@ -105,8 +105,8 @@ nav:
           - getting-started/index.md
           - Repositories: dev/repositories.md
           - Run the MCP server: getting-started/mcp-server.md
-          - Run the chat gateway: getting-started/chat-gateway.md
           - Test with MCP Inspector: getting-started/inspector.md
+          - Run the chat gateway: getting-started/chat-gateway.md
       - Building plugins & datasets:
           - plugins/index.md
           - Describe your plugin: plugins/plugin-info.md

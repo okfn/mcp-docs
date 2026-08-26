@@ -11,7 +11,7 @@ Everything runs on a laptop with free software. You will need:
 The order that makes sense:
 
 1. [Run the MCP server](mcp-server.md): the heart of the platform.
-2. [Test it with MCP Inspector](inspector.md): call tools by hand,
-   no AI involved.
+2. [Test it with MCP Inspector](inspector.md) (optional): call tools
+   by hand, no AI involved.
 3. [Run the chat gateway](chat-gateway.md): the full experience,
    AI included.
