@@ -27,10 +27,9 @@ single, well-understood domain (energy) is a deliberate choice: see
 
 ## Installing it
 
-It is a pip-installable Python package. Install it into the MCP server's
-environment and restart the server; there is no `tool_sources.yaml`
-entry to add. Descriptions, parameters and sample questions are written
-in Spanish, matching the audience.
+It is a pip-installable Python package. Install it into the MCP
+server's environment and restart the server. Descriptions, parameters
+and sample questions are written in Spanish, matching the audience.
 
 ## From the field
 

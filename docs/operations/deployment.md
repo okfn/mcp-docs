@@ -16,13 +16,13 @@ flowchart LR
     internet([Internet]) --> caddy[Caddy: TLS + reverse proxy]
     caddy --> gateway[Chat gateway: Flask + Gunicorn]
     gateway --> server[MCP server :8063]
-    server --> tools[(Remote tool repos, cloned via deploy keys)]
+    server --> tools[(Plugin packages, installed at build time)]
 ```
 
 - **caddy**: terminates TLS and forwards traffic to the gateway.
 - **gateway**: the chat UI, needs `AI_API_KEY` in a `.env` file.
-- **server**: the MCP server, installs the plugin repos listed in
-  `server/tool_sources.yaml` at build time.
+- **server**: the MCP server; its image pip-installs the plugin
+  packages at build time.
 
 !!! note "Stub"
     This page is a summary. A fuller runbook (first-time VPS setup,

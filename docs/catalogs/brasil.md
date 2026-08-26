@@ -20,6 +20,7 @@ Connecting AI to Public Information*.
 ## Adding a dataset
 
 Follow the general [YAML datasets](../plugins/yaml-datasets.md) guide:
-one new `.yaml` file in `datasets/`, push, and re-fetch on the server.
+one new `.yaml` file in `datasets/`, push, then reinstall the package
+and restart the server.
 Descriptions, parameters and sample questions are written in
 Portuguese, matching the audience.
