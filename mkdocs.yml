@@ -60,8 +60,6 @@ extra_javascript:
 
 plugins:
   - search
-  # Translations dropped during the docs restructure; es/pt will be
-  # re-added as a final pass once the English content settles.
   - i18n:
       docs_structure: suffix
       fallback_to_default: true
@@ -72,6 +70,66 @@ plugins:
           name: English
           build: true
           default: true
+        - locale: es
+          name: Español
+          build: true
+          nav_translations:
+            Home: Inicio
+            Introduction: Introducción
+            Project context: Contexto del proyecto
+            Why MCP?: ¿Por qué MCP?
+            Developer guide: Guía para desarrolladores
+            Architecture & design principles: Arquitectura y principios de diseño
+            System architecture: Arquitectura del sistema
+            Architectural constraints: Restricciones de arquitectura
+            Modular plugins: Plugins modulares
+            Getting started: Primeros pasos
+            Repositories: Repositorios
+            Run the MCP server: Ejecutar el servidor MCP
+            Test with MCP Inspector: Probar con MCP Inspector
+            Run the chat gateway: Ejecutar el chat gateway
+            Building plugins & datasets: Construir plugins y datasets
+            Describe your plugin: Describir tu plugin
+            YAML datasets: Datasets en YAML
+            Python tools: Herramientas en Python
+            Tool results: Resultados de las herramientas
+            Connect to a server: Conectar a un servidor
+            Domain glossaries: Glosarios de dominio
+            Use cases: Casos de uso
+            Uruguay implementation: Implementación de Uruguay
+            Operations: Operaciones
+            Deployment: Despliegue
+            Contributing: Contribuir
+        - locale: pt
+          name: Português
+          build: true
+          nav_translations:
+            Home: Início
+            Introduction: Introdução
+            Project context: Contexto do projeto
+            Why MCP?: Por que MCP?
+            Developer guide: Guia do desenvolvedor
+            Architecture & design principles: Arquitetura e princípios de design
+            System architecture: Arquitetura do sistema
+            Architectural constraints: Restrições de arquitetura
+            Modular plugins: Plugins modulares
+            Getting started: Primeiros passos
+            Repositories: Repositórios
+            Run the MCP server: Executar o servidor MCP
+            Test with MCP Inspector: Testar com o MCP Inspector
+            Run the chat gateway: Executar o chat gateway
+            Building plugins & datasets: Construir plugins e datasets
+            Describe your plugin: Descrever seu plugin
+            YAML datasets: Datasets em YAML
+            Python tools: Ferramentas em Python
+            Tool results: Resultados das ferramentas
+            Connect to a server: Conectar a um servidor
+            Domain glossaries: Glossários de domínio
+            Use cases: Casos de uso
+            Uruguay implementation: Implementação do Uruguai
+            Operations: Operações
+            Deployment: Implantação
+            Contributing: Contribuir
 
 markdown_extensions:
   - admonition
