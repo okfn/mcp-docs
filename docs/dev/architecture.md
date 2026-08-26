@@ -121,6 +121,19 @@ callable, which is stricter than the MCP standard requires. See [tool
 results](../plugins/tool-results.md) for the full shape and how it is
 enforced.
 
+## Open data resources
+
+Besides tools, the server exposes **MCP resources** following the
+standard, plus a tool that lets the user discover which resources are
+available and consume them. This invites users to keep analysing the
+data outside the chat: someone can follow a link from an answer to the
+underlying resource and continue on their own, with a spreadsheet, a
+notebook, or whatever they prefer.
+
+It also reinforces the traceability idea: the data is not trapped
+inside the assistant, it points back out to the open portal it came
+from.
+
 ## Transports
 
 The MCP server speaks two transports:
