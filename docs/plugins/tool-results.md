@@ -34,7 +34,10 @@ from mcp_server import DataToolOutput
 def list_cities() -> DataToolOutput:
     """Return the top 3 cities by population."""
     return CallToolResult(
-        content=[TextContent(type="text", text="Found 3 cities sorted by population.")],
+        content=[TextContent(type="text", text=(
+            "The 3 most populated cities are Tokyo (37,400,068), "
+            "Delhi (30,290,936) and Shanghai (27,058,479)."
+        ))],
         structuredContent={
             "sources": ["https://example.org/cities-data"],
             "table": [
@@ -46,6 +49,9 @@ def list_cities() -> DataToolOutput:
         },
     )
 ```
+
+Note that `content` repeats the facts. That is deliberate: the model
+writes its prose only from `content`.
 
 ## How it is enforced
 
