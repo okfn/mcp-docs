@@ -9,7 +9,6 @@ You need the [MCP server running](mcp-server.md) in HTTP mode first.
 git clone https://github.com/okfn/mcp-chat-gateway
 cd mcp-chat-gateway
 uv sync
-source .venv/bin/activate
 ```
 
 Configure the AI provider, either by editing `local_settings.py` or
@@ -25,8 +24,7 @@ with environment variables:
 Then run it:
 
 ```bash
-python app.py            # serves on http://127.0.0.1:8064
-flask run --debug        # alternative: debug mode on port 5000
+uv run python app.py     # serves on http://127.0.0.1:8064
 ```
 
 Open `http://127.0.0.1:8064`, pick a suggested question or type your
