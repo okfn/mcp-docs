@@ -35,6 +35,3 @@ We tested this approach across two live public datasets:
   infrastructure.
 - **Local ownership.** Each team maintains its own plugin repository
   independently, using their preferred language and release schedule.
-
-For the spoken version of this story, watch [the CEPAL talk on the
-home page](../index.md#watch-the-talk).
