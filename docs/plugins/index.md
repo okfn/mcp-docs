@@ -4,8 +4,7 @@ A plugin is a git repo that teaches the MCP server about a set of
 datasets. We scope each plugin to a **focused data domain** (for
 example Uruguay's energy balance) rather than to a whole open data
 portal, which tends to grow too general. The Uruguay energy and Brasil
-catalogs are plugins; yours can be too. See [why we scope plugins
-narrowly](../dev/design-pattern.md) for the reasoning.
+catalogs are plugins; yours can be too.
 
 A plugin can describe its tools in two ways, and mix both freely:
 
@@ -18,6 +17,7 @@ A plugin can describe its tools in two ways, and mix both freely:
   datasets: see [when to use YAML vs.
   Python](yaml-datasets.md#when-to-use-yaml-vs-python).
 
+We prefer Python functions as tools to start.
 Whatever the style, every tool must follow the same
 [result contract](tool-results.md): a text answer for the AI plus
 structured data (sources, tables, charts) for the UI.
@@ -25,10 +25,8 @@ structured data (sources, tables, charts) for the UI.
 ## The path to your own plugin
 
 1. Start from the existing catalogs as templates:
-   [Uruguay's energy plugin](../catalogs/uruguay.md) (Python) or
-   [Brasil](../catalogs/brasil.md) (YAML, simple datasets).
-2. Write your first tool as a [Python function](python-tools.md), or a
-   YAML dataset if it really is a simple one.
+   [Uruguay's energy plugin](../catalogs/uruguay.md) (Python).
+2. Write your first tool as a [Python function](python-tools.md).
 3. Test it locally with [MCP Inspector](../getting-started/inspector.md).
 4. [Give your plugin a description and sample questions](plugin-info.md)
    so the chat shows a nice landing card.

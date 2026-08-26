@@ -9,7 +9,7 @@ in a YAML file and pick an **engine**.
     The moment a dataset needs anything custom, YAML stops being enough
     and you are better off with a [Python tool](python-tools.md). Read
     [when to use YAML vs. Python](#when-to-use-yaml-vs-python) before
-    you lean on it.
+    you lean on it. We always prefer python over YAML.
 
 ## The engines
 
