@@ -25,27 +25,6 @@ Para más información, visita la página oficial del proyecto
 "Traceable AI Answers for Public Data" en el
 [sitio web de la Open Knowledge Foundation (OKFN)](https://okfn.org/en/projects/ai-learning-labs/mcp-open-government-data/).
 
-## Mira la charla {#watch-the-talk}
-
-Presentamos este trabajo como *IA Trazable para datos publicos: un
-modelo abierto para America Latina* en el UN Big Data Regional Hub en
-Brasil, organizado por la CEPAL, en junio de 2026, a cargo de Patricio
-Del Boca (líder técnico) y Andres Vazquez (desarrollador senior).
-
-<div class="video">
-  <iframe src="https://www.youtube-nocookie.com/embed/9QBr7kWAcdI"
-          title="IA Trazable para datos publicos: un modelo abierto para America Latina"
-          style="width: 100%; aspect-ratio: 16 / 9; border: 0;"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-</div>
-
-La charla cubre el desafío central (por qué no se puede confiar en los
-LLM por sí solos con datos públicos), el modelo abierto detrás de
-nuestra respuesta, una demo en vivo del caso de Uruguay y lo que
-aprendimos. Esta documentación es la versión escrita y extendida de esa
-misma visión.
-
 La [página del evento de la CEPAL](https://rtc-cea.cepal.org/es/evento/videoconferencia-sobre-ia-trazable-para-datos-publicos-un-modelo-abierto-para-america-latina)
 tiene más sobre la sesión, incluyendo un PDF con las diapositivas de la
 presentación.

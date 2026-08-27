@@ -1,18 +1,187 @@
+/* OKFN brand styles, mirroring https://okfn.org/ (see assets/css/styles.css
+   there). Palette taken from the site's Tailwind build:
+
+     cyan    #00d1ff  brand mark, button/pill hover
+     purple  #e077ff  hover / active accent
+     link    #00a9e0  in-text links ("okfn-link" in their CSS)
+     lime    #e4ff36  highlight (unused here so far)
+     black / white    header, buttons, text
+
+   Fonts are set in mkdocs.yml (theme.font): Hanken Grotesk for text and
+   Space Mono for code, both on Google Fonts. okfn.org uses HK Grotesk
+   (Hanken Grotesk's predecessor) and Necto Mono (commercial, so we
+   substitute Space Mono). Headings on okfn.org are set in the mono face,
+   which we reproduce below.
+
+   The palette in mkdocs.yml is "custom", so all --md-* colors come from
+   this file. Light scheme first, then the slate (dark) overrides. */
+
+:root,
+[data-md-color-scheme="default"] {
+  /* Header: white with black text, like okfn.org's main header. */
+  --md-primary-fg-color: #ffffff;
+  --md-primary-fg-color--light: #f8f8f8;
+  --md-primary-fg-color--dark: #00a9e0;
+  --md-primary-bg-color: rgba(0, 0, 0, 0.87);
+  --md-primary-bg-color--light: rgba(0, 0, 0, 0.54);
+
+  /* Hover / focus accent: OKFN purple. */
+  --md-accent-fg-color: #e077ff;
+  --md-accent-fg-color--transparent: rgba(224, 119, 255, 0.1);
+
+  /* In-text links: same blue okfn.org uses for body links. */
+  --md-typeset-a-color: #00a9e0;
+
+  --okfn-cyan: #00d1ff;
+  --okfn-purple: #e077ff;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #14181c;
+  --md-primary-fg-color--light: #1e2429;
+  --md-primary-fg-color--dark: #00d1ff;
+  --md-primary-bg-color: rgba(255, 255, 255, 0.92);
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.6);
+
+  --md-accent-fg-color: #e077ff;
+  --md-accent-fg-color--transparent: rgba(224, 119, 255, 0.12);
+
+  /* Cyan reads better than the darker link blue on slate. */
+  --md-typeset-a-color: #00d1ff;
+}
+
+/* Light blue "fog" at the top of the page, light mode only. okfn.org
+   draws this with its -has-bg-circle utility: a large cyan circle,
+   heavily blurred, blended with "darken", centered on the top edge so
+   only its lower half shows. Absolute (not fixed) so it scrolls away
+   with the page, like the original. Sized with min() so it can never
+   cause horizontal overflow on narrow screens. */
+@media screen {
+  body[data-md-color-scheme="default"] {
+    position: relative;
+    /* Make body a stacking context so the fog's z-index -1 puts it
+       above body's own background instead of underneath it. */
+    z-index: 0;
+  }
+
+  body[data-md-color-scheme="default"]::before {
+    content: "";
+    position: absolute;
+    top: -22rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(56rem, 100vw);
+    aspect-ratio: 1 / 1;
+    /* A radial gradient instead of okfn.org's blur() filter: same soft
+       fog, but no blur artifacts and cheaper to paint. */
+    background: radial-gradient(
+      circle closest-side,
+      rgba(0, 209, 255, 0.55),
+      rgba(0, 209, 255, 0) 100%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* The sidebar titles paint an opaque box to mask their own scrolled
+     content; over the fog it reads as a white patch, so drop it. */
+  body[data-md-color-scheme="default"] .md-nav--primary .md-nav__title {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+/* The white header needs a line to separate it from the page. */
+.md-header {
+  border-bottom: 0.05rem solid rgba(0, 0, 0, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+/* The OKFN wordmark is wide; give it more height than Material's
+   default 1.2rem logo slot so it stays legible. */
+.md-header__button.md-logo {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.md-header__button.md-logo img {
+  height: 1.8rem;
+  width: auto;
+}
+
+/* The logo SVG is black + cyan, drawn for a light background. There is
+   no white variant on okfn.org, so in dark mode invert it: black turns
+   white, and the hue rotation brings the inverted cyan back to cyan. */
+[data-md-color-scheme="slate"] .md-header__button.md-logo img {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* On a white header Material's search field (a translucent white) is
+   invisible; use a light gray like okfn.org's input fields. */
+[data-md-color-scheme="default"] .md-search__form {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-md-color-scheme="default"] .md-search__form:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+/* okfn.org sets all headings in the mono face (their text-hl-* classes
+   use Necto Mono); mirror that with the code font. */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: var(--md-code-font-family);
+}
+
+.md-typeset h1 {
+  font-weight: 400;
+  color: var(--md-default-fg-color);
+}
+
+/* Buttons like okfn.org's .btn: black pill, cyan on hover. */
+.md-typeset .md-button {
+  border-radius: 100px;
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  background-color: var(--okfn-cyan);
+  border-color: var(--okfn-cyan);
+  color: #000;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button {
+  background-color: #fff;
+  border-color: #fff;
+  color: #000;
+}
+
 /* Custom "tagline" admonition: a large, highlighted key statement.
-   Uses a violet accent so it stands apart from the teal theme.
-   Add one with:
+   Uses the OKFN purple accent. Add one with:
 
      !!! tagline "Title"
          Your big statement here.
 */
 
 :root {
-  --tagline-accent: #7c4dff;
+  /* Darker than the brand purple so the title text stays readable
+     on a white background. */
+  --tagline-accent: #a940e0;
   --md-admonition-icon--tagline: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10,7L8,11H11V17H5V11L7,7H10M18,7L16,11H19V17H13V11L15,7H18Z"/></svg>');
 }
 
 [data-md-color-scheme="slate"] {
-  --tagline-accent: #b39dff;
+  --tagline-accent: #e077ff;
 }
 
 .md-typeset .admonition.tagline,

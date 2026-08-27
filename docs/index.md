@@ -23,30 +23,6 @@ For more information, please visit the official project page
 "Traceable AI Answers for Public Data" at the
 [Open Knowledge Foundation (OKFN) website](https://okfn.org/en/projects/ai-learning-labs/mcp-open-government-data/).
 
-## Watch the talk
-
-We presented this work as *IA Trazable para datos publicos: un modelo
-abierto para America Latina* (Traceable AI for public data: an open
-model for Latin America) at the UN Big Data Regional Hub in Brazil,
-hosted by CEPAL, in June 2026, by Patricio Del Boca (technical lead)
-and Andres Vazquez (senior developer).
-
-<div class="video">
-  <iframe src="https://www.youtube-nocookie.com/embed/9QBr7kWAcdI"
-          title="IA Trazable para datos publicos: un modelo abierto para America Latina"
-          style="width: 100%; aspect-ratio: 16 / 9; border: 0;"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-</div>
-
-The talk covers the core challenge (why LLMs alone cannot be trusted
-with public data), the open model behind our answer, a live demo of the
-Uruguay case, and what we learned. This documentation is the written,
-extended version of that same view.
-
-The [CEPAL event page](https://rtc-cea.cepal.org/es/evento/videoconferencia-sobre-ia-trazable-para-datos-publicos-un-modelo-abierto-para-america-latina)
-has more about the session, including a PDF of the presentation slides.
-
 ## What is in the box
 
 - An **MCP server** that turns open datasets (CSV files, databases) into

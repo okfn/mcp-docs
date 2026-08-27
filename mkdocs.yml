@@ -10,23 +10,32 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: en
+  logo: assets/images/lg-okfn.svg
+  favicon: assets/images/favicon.ico
   icon:
-    logo: material/database-search
     repo: fontawesome/brands/github
+  # OKFN brand fonts (see docs/stylesheets/extra.css): okfn.org uses
+  # HK Grotesk for text and Necto Mono for headings/code. Hanken Grotesk
+  # is the same typeface's successor on Google Fonts; Space Mono is the
+  # closest Google Fonts stand-in for Necto Mono (a commercial font).
+  font:
+    text: Hanken Grotesk
+    code: Space Mono
   palette:
-    # Light mode
+    # Light mode. "custom" defers all colors to stylesheets/extra.css,
+    # where the OKFN palette (cyan/purple/black) is defined.
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: deep orange
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
-      accent: deep orange
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
@@ -97,6 +106,7 @@ plugins:
             Domain glossaries: Glosarios de dominio
             Use cases: Casos de uso
             Uruguay implementation: Implementación de Uruguay
+            Brazil implementation: Implementación de Brasil
             Operations: Operaciones
             Deployment: Despliegue
             Contributing: Contribuir
@@ -127,6 +137,7 @@ plugins:
             Domain glossaries: Glossários de domínio
             Use cases: Casos de uso
             Uruguay implementation: Implementação do Uruguai
+            Brazil implementation: Implementação do Brasil
             Operations: Operações
             Deployment: Implantação
             Contributing: Contribuir
@@ -176,6 +187,7 @@ nav:
   - Use cases:
       - catalogs/index.md
       - Uruguay implementation: catalogs/uruguay.md
+      - Brazil implementation: catalogs/brasil.md
   - Operations:
       - operations/index.md
       - Deployment: operations/deployment.md
