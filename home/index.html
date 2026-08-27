@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRAIL: Traceable Records for AI, Interoperability &amp; Lineage</title>
+<meta name="description" content="An Open Knowledge Foundation pilot connecting AI assistants to official open datasets through the Model Context Protocol, so every answer is accurate and traceable to its source.">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* OKFN brand, mirroring https://okfn.org/ and the mcp-docs stylesheet:
+   cyan #00d1ff, purple #e077ff, link blue #00a9e0, black on white.
+   Hanken Grotesk for text, Space Mono for headings (stand-ins for
+   okfn.org's HK Grotesk and Necto Mono). */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cyan: #00d1ff;
+  --purple: #e077ff;
+  --link: #00a9e0;
+  --ink: #111111;
+  --muted: #555555;
+  --line: rgba(0, 0, 0, 0.12);
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  color: var(--ink);
+  background: #ffffff;
+  line-height: 1.6;
+  position: relative;
+  z-index: 0;
+}
+
+/* Soft cyan fog on the top edge, like okfn.org's -has-bg-circle. */
+body::before {
+  content: "";
+  position: absolute;
+  top: -22rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(56rem, 100vw);
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(0, 209, 255, 0.45),
+    rgba(0, 209, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1, h2, h3 {
+  font-family: "Space Mono", "Courier New", monospace;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+a { color: var(--link); }
+
+.wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Header */
+header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+}
+
+.header-inner img { height: 2rem; width: auto; display: block; }
+
+.header-tag {
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* Hero */
+.hero { padding: 3.5rem 0 2.5rem; text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2.6rem, 9vw, 4rem);
+  letter-spacing: 0.06em;
+}
+
+.hero .tagline {
+  margin-top: 0.5rem;
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: clamp(0.85rem, 2.8vw, 1.05rem);
+  color: var(--ink);
+}
+
+.hero p {
+  margin: 1.25rem auto 0;
+  max-width: 36rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+}
+
+.hero strong { color: var(--ink); }
+
+/* Cards */
+.cards {
+  display: grid;
+  gap: 1rem;
+  padding: 0.5rem 0 3rem;
+}
+
+.card {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1.4rem 1.5rem;
+  background: #ffffff;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+a.card:hover, a.card:focus-visible {
+  border-color: var(--cyan);
+  box-shadow: 0 4px 20px rgba(0, 209, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.card p { margin-top: 0.5rem; color: var(--muted); font-size: 0.95rem; }
+
+.card .go {
+  margin-top: 0.75rem;
+  display: inline-block;
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--link);
+}
+
+a.card:hover .go { color: var(--purple); }
+
+.pill {
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.card.soon { color: var(--muted); }
+
+.card.soon .pill { background: #e8e8e8; color: var(--muted); }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 0 2.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+footer p + p { margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a href="https://okfn.org" aria-label="Open Knowledge Foundation">
+      <img src="lg-okfn.svg" alt="Open Knowledge Foundation">
+    </a>
+    <span class="header-tag">AI Learning Labs</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>TRAIL</h1>
+    <p class="tagline">Traceable Records for AI, Interoperability &amp; Lineage</p>
+    <p>
+      An open pilot connecting AI assistants to official open datasets
+      through the Model Context Protocol (MCP), built around two goals:
+      <strong>accuracy</strong> - answers computed from the data, not
+      recalled from training - and <strong>traceability</strong> - every
+      answer links back to its source.
+    </p>
+  </section>
+
+  <section class="cards" aria-label="Explore the platform">
+    <div class="card soon">
+      <h2>The Field Guide <span class="pill">Coming soon</span></h2>
+      <p>
+        A practical guide to connecting AI to public information: lessons
+        from our Brazil and Uruguay pilots on how governments and
+        developers can increase accuracy and trust in AI responses.
+      </p>
+    </div>
+
+    <a class="card" href="docs/">
+      <h2>Documentation</h2>
+      <p>
+        Architecture, guides and code patterns to run the MCP server,
+        connect a chat and build plugins for your own country's data.
+      </p>
+      <span class="go">Read the docs &#8594;</span>
+    </a>
+
+    <a class="card" href="iati/">
+      <h2>Chat with IATI data <span class="pill">Demo</span></h2>
+      <p>
+        Ask questions about international aid activities published under
+        the IATI standard. Every reply is grounded in a tool call over
+        the official data - never invented by the model.
+      </p>
+      <span class="go">Open the chat &#8594;</span>
+    </a>
+
+    <a class="card" href="ben-uruguay/">
+      <h2>Chat with Uruguay data <span class="pill">Pilot</span></h2>
+      <p>
+        Ask questions about Uruguay's national energy balance, straight
+        from the open data portal catalogodatos.gub.uy. In Spanish.
+      </p>
+      <span class="go">Open the chat &#8594;</span>
+    </a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      A project by the
+      <a href="https://okfn.org">Open Knowledge Foundation</a>'s
+      <a href="https://okfn.org/en/projects/ai-learning-labs/mcp-open-government-data/">AI Learning Labs</a>.
+    </p>
+    <p>
+      Open source on <a href="https://github.com/okfn/mcp-server">GitHub</a>.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
