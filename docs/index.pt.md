@@ -18,7 +18,8 @@ que eles importam para dados públicos.
 Confira o *Field Guide to Connecting AI to Public Information* (guia de
 campo para conectar a IA à informação pública). Ele cobre lições dos
 nossos pilotos no Brasil e no Uruguai, orientações para trabalhar com
-especialistas de domínio e feedback de usuários reais.
+especialistas de domínio e feedback de usuários reais. O link para o
+Field Guide será compartilhado em breve.
 
 Para mais informações, visite a página oficial do projeto
 "Traceable AI Answers for Public Data" no

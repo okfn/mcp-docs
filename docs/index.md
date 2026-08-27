@@ -17,7 +17,8 @@ matter for public data.
 **Looking for non-technical context or project strategy?** Check out
 the *Field Guide to Connecting AI to Public Information*. It covers
 lessons from our Brazil and Uruguay pilots, guidance on working with
-domain experts, and real-world user feedback.
+domain experts, and real-world user feedback. The link to the Field
+Guide will be shared soon.
 
 For more information, please visit the official project page
 "Traceable AI Answers for Public Data" at the
