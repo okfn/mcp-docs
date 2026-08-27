@@ -50,6 +50,12 @@ theme:
     - content.code.copy
     - content.action.edit
 
+# The header logo/title link to the TRAIL landing page instead of the
+# docs home (Material's extra.homepage). The docs home stays reachable
+# as "Home" in the sidebar nav.
+extra:
+  homepage: https://mcp.okfn.org/
+
 extra_css:
   - stylesheets/extra.css
 
