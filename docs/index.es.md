@@ -26,10 +26,6 @@ Para más información, visita la página oficial del proyecto
 "Traceable AI Answers for Public Data" en el
 [sitio web de la Open Knowledge Foundation (OKFN)](https://okfn.org/en/projects/ai-learning-labs/mcp-open-government-data/).
 
-La [página del evento de la CEPAL](https://rtc-cea.cepal.org/es/evento/videoconferencia-sobre-ia-trazable-para-datos-publicos-un-modelo-abierto-para-america-latina)
-tiene más sobre la sesión, incluyendo un PDF con las diapositivas de la
-presentación.
-
 ## Qué hay en la caja
 
 - Un **servidor MCP** que convierte datasets abiertos (archivos CSV,
