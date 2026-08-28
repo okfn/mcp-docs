@@ -50,7 +50,7 @@ theme:
     - content.code.copy
     - content.action.edit
 
-# The header logo/title link to the TRAIL landing page instead of the
+# The header logo/title link to the MCP Labs landing page instead of the
 # docs home (Material's extra.homepage). The docs home stays reachable
 # as "Home" in the sidebar nav.
 extra:
